@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --main-color:#F9FAFB;
+    --secondary-color:#373737;
+    --primary-color:#FACC15;
+}
+
+@font-face {
+ font-family: 'Outfit';
+ src: url('../public/fonts/outfit/Outfit-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('../public/fonts/ibm/IBMPlexMono-Regular.ttf');
+}
+
+*{
+ box-sizing: border-box;
+ font-family: 'Outfit';
+}
+
+.section-number{
+    font-family: 'IBM Plex Mono';
+}
+
+.normal-section{
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem /* 16px */;
+    padding-right: 1rem /* 16px */;
+}
+
+@media (min-width: 768px) {
+    .normal-section {
+        padding-left: 2rem /* 32px */;
+        padding-right: 2rem /* 32px */;
+    }
+}

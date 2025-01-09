@@ -1,0 +1,17 @@
+<div class="leading-none group">
+    <div class="uppest section-number text-end">
+        @if (hasCustomSymbol()) {
+            {{linkTitle()?.customSymbol}}
+        }@else {
+            {{linkNumber()<10 ? '0' + linkNumber() : linkNumber() }}
+        }
+    </div>
+    <div class="down relative">
+        <p>
+            <span class="absolute -bottom-3 -left-2 text-lg font-medium opacity-0
+                duration-300 ease-out
+                group-hover:opacity-100 group-hover:-bottom-1">/</span>
+            {{linkTitle()?.title}}
+        </p>
+    </div>
+</div>
