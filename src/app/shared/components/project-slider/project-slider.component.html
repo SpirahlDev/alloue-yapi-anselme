@@ -1,0 +1,29 @@
+<section class="h-full min-h-[226px] flex gap-4">
+    <button class="h-full">
+        <app-slider-button [orientation]="'LEFT'"></app-slider-button>
+    </button>
+
+    <div class="grid grid-cols-2 gap-4 overflow-y-auto h-full">
+
+        <div class="col-span-1">
+            <app-project-card></app-project-card>
+        </div>
+
+        <div class="col-span-1">
+            <app-project-card></app-project-card>
+        </div>
+
+        <div class="col-span-1">
+            <app-project-card></app-project-card>
+        </div>
+        <div class="col-span-1">
+            <app-project-card></app-project-card>
+        </div> 
+        
+    </div>
+    
+
+    <button class="h-full" >
+        <app-slider-button [orientation]="'RIGHT'"></app-slider-button>
+    </button>
+</section>

@@ -1,0 +1,19 @@
+
+.skill-selected{
+    background-color: var(--selection-color);
+}
+
+.skill-selected p{
+    color: white;
+}
+
+.container {
+    border: 1px dashed transparent;
+    border-image: repeating-linear-gradient(
+        90deg,
+        black 0,
+        black 10px,
+        transparent 10px,
+        transparent 20px
+    ) 1;
+}

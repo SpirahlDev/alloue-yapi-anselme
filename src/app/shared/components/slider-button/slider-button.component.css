@@ -1,0 +1,117 @@
+#content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.slider-container {
+    position: relative;
+    width: 50px;
+    height: 300px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.slider-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Lignes horizontales */
+.slider-border:before, 
+.slider-border:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
+
+/* Coin supérieur */
+.slider-border:before {
+    top: 0;
+    border-top: 2px solid #999;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Coin inférieur */
+.slider-border:after {
+    bottom: 0;
+    border-bottom: 2px solid #999;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Lignes verticales gauche et droite */
+.border-left, 
+.border-right {
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    width: 2px;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #999 0px,
+        #999 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+
+.border-left {
+    left: 0;
+}
+
+.border-right {
+    right: 0;
+}
+
+/* Coins arrondis */
+.corner {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #999;
+}
+
+.corner-top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 15px;
+}
+
+.corner-top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+    border-top-right-radius: 15px;
+}
+
+.corner-bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+    border-bottom-left-radius: 15px;
+}
+
+.corner-bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 15px;
+}

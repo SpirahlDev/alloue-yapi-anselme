@@ -1,11 +1,11 @@
-<div class="bg-[var(--main-color)] min-h-dvh relative">
+<div class="bg-[var(--main-color)] min-h-dvh relative pb-5">
 
     <div class="min-h-fit z-20 fixed w-full">
         <app-nav-bar></app-nav-bar>
 
     </div>
 
-    <div class="normal-section py-4 md:pt-48 flex relative">
+    <div class="normal-section py-4 md:pt-36 flex relative">
 
         <div class="left-welcome-word w-1/2 md:min-w-fit z-10 ">
             <p class="mt-4 text-[#373737] text-md md:text-xl font-light" style="word-spacing: 2px;">Bonjour, je suis</p>
@@ -45,12 +45,13 @@
             </div>
         </div>
 
-        <div class="w-1/2 md:w-full scale-[1.18]">
+        <div class="w-1/2 md:w-full scale-[1.10]">
             <img src="/images/alloue-yapi-anselme.png" alt="Alloué Yapi Anselme Emmanuel, Développeur logiciel">
         </div>
     </div>
 
     <div class="normal-section mt-8">
+
         <div id="section-title" class="flex items-center gap-5">
             <span class="section-number text-xl">02</span>
             <h2> 
@@ -67,8 +68,198 @@
                 Passionné par l'informatique depuis mon plus jeune âge, c'est autour de cette passion que j'ai construit mon parcours.            </p>
             
             <p class="mt-5">
-                De mes débuts avec Scratch en classe de 4ᵉ jusqu'à l'obtention de mon diplôme en Génie Logiciel à l'ESATIC, je cherche constamment à apprendre, à dépasser mes limites et à travailler sur des projets innovants qui me permettent de combiner créativité et technique.
+                De mes débuts avec Scratch en classe de 4ᵉ jusqu'à l'obtention de mon diplôme en Génie Logiciel à 
+                l'<span class="cursor-pointer word-highlight before:bg-[#85caffbf]" (mouseenter)="op.toggle($event)" (mouseleave)="onMouseLeave(op)">
+                    ESATIC
+                </span>, 
+                je cherche constamment à apprendre, à dépasser mes limites et à travailler sur des projets innovants qui me permettent de combiner créativité et technique.
             </p>
         </div>
+
+        <div>
+            <h3 class="text-lg font-medium">Informations</h3>
+            <ul class="info-list flex items-center gap-6 mt-4 text-lg font-light">
+                <li>
+                    <div class="flex gap-2 items-center">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 13.4 7.05 19.5 7.35 19.76C7.53113 19.9149 7.76165 20.0001 8 20.0001C8.23835 20.0001 8.46887 19.9149 8.65 19.76C9 19.5 16 13.4 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0ZM8 17.65C5.87 15.65 2 11.34 2 8C2 6.4087 2.63214 4.88258 3.75736 3.75736C4.88258 2.63214 6.4087 2 8 2C9.5913 2 11.1174 2.63214 12.2426 3.75736C13.3679 4.88258 14 6.4087 14 8C14 11.34 10.13 15.66 8 17.65ZM8 4C7.20887 4 6.43552 4.2346 5.77772 4.67412C5.11992 5.11365 4.60723 5.73836 4.30448 6.46927C4.00173 7.20017 3.92252 8.00444 4.07686 8.78036C4.2312 9.55628 4.61216 10.269 5.17157 10.8284C5.73098 11.3878 6.44371 11.7688 7.21964 11.9231C7.99556 12.0775 8.79983 11.9983 9.53073 11.6955C10.2616 11.3928 10.8864 10.8801 11.3259 10.2223C11.7654 9.56448 12 8.79113 12 8C12 6.93913 11.5786 5.92172 10.8284 5.17157C10.0783 4.42143 9.06087 4 8 4ZM8 10C7.60444 10 7.21776 9.8827 6.88886 9.66294C6.55996 9.44318 6.30362 9.13082 6.15224 8.76537C6.00087 8.39991 5.96126 7.99778 6.03843 7.60982C6.1156 7.22186 6.30608 6.86549 6.58579 6.58579C6.86549 6.30608 7.22186 6.1156 7.60982 6.03843C7.99778 5.96126 8.39991 6.00087 8.76537 6.15224C9.13082 6.30362 9.44318 6.55996 9.66294 6.88886C9.8827 7.21776 10 7.60444 10 8C10 8.53043 9.78929 9.03914 9.41421 9.41421C9.03914 9.78929 8.53043 10 8 10Z" fill="#0174C1"/>
+                        </svg>
+                        <p>Abidjan</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="flex gap-2 items-center">
+                        <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5 0L0 6.66667L4.54545 9.08889V15.7556L12.5 20L20.4545 15.7556V9.08889L22.7273 7.87778V15.5556H25V6.66667L12.5 0ZM20.25 6.66667L12.5 10.8L4.75 6.66667L12.5 2.53333L20.25 6.66667ZM18.1818 14.4333L12.5 17.4667L6.81818 14.4333V10.3L12.5 13.3333L18.1818 10.3V14.4333Z" fill="#0174C1"/>
+                        </svg>
+                            
+                        <p>ESATIC</p>
+                    </div>
+                </li>
+                <li>
+                    Âge : {{getAge()}} ans
+                </li>
+            </ul>
+        </div>    
+        
+        <div class="mt-8">
+            <h3 class="text-xl font-medium">Centres d’intèrêt</h3>
+            <ul class="info-list flex items-center gap-6 mt-4 text-xl">
+                <li class="">
+                    <div class="pill text-base">
+                       Animation Japonaise
+                    </div>
+                </li>
+
+                <li class="">
+                    <div class="pill text-base">
+                       Électroniques
+                    </div>
+                </li>
+
+                <li class="">
+                    <div class="pill text-base">
+                       Jeux vidéos
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+
+
+        <div id="section-title" class="flex items-center gap-5 mt-8">
+            <span class="section-number text-xl">03</span>
+            <h2> 
+                <span class="text-[var(--secondary-color)] text-2xl font-semibold">
+                    Projets & technologies
+                </span>
+            </h2>
+
+            <div class="h-[2px] bg-[var(--primary-color)] w-20 mt-1"></div>
+        </div>
+
+        <section class="flex gap-14 justify-between">
+
+            <div>
+                <div id="categories" class="flex gap-6 mt-8">
+                    <button
+                        class="stroke-[var(--selection-color)] flex bg-white gap-2 items-center rounded-lg px-5 py-3" 
+                        [ngClass]="{'skill-selected stroke-white':skillCategory==='FRONTEND'}"
+                        (click)="onCategoryChange('FRONTEND')"
+                    >
+                        <div>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.6 1.09998H3.2C1.98497 1.09998 1 2.08495 1 3.29998V18.7C1 19.915 1.98497 20.9 3.2 20.9H18.6C19.815 20.9 20.8 19.915 20.8 18.7V3.29998C20.8 2.08495 19.815 1.09998 18.6 1.09998Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M1 7.69995H20.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7.6001 20.9V7.69995" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p class="text-base">Frontend</p>
+                    </button> 
+                    
+                    <button 
+                        class="fill-[var(--selection-color)] flex bg-white gap-2 items-center rounded-lg px-5 py-3" 
+                        [ngClass]="{'skill-selected fill-white':skillCategory==='BACKEND'}"
+                        (click)="onCategoryChange('BACKEND')"
+
+                    >
+                        <div>
+                            <svg width="20" height="26" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 19.25C4.75277 19.25 4.5111 19.3233 4.30554 19.4607C4.09998 19.598 3.93976 19.7932 3.84515 20.0216C3.75054 20.2501 3.72579 20.5014 3.77402 20.7439C3.82225 20.9863 3.9413 21.2091 4.11612 21.3839C4.29093 21.5587 4.51366 21.6777 4.75614 21.726C4.99861 21.7742 5.24995 21.7495 5.47835 21.6549C5.70676 21.5602 5.90199 21.4 6.03934 21.1945C6.17669 20.9889 6.25 20.7472 6.25 20.5C6.25 20.1685 6.1183 19.8505 5.88388 19.6161C5.64946 19.3817 5.33152 19.25 5 19.25ZM5 11.75C4.75277 11.75 4.5111 11.8233 4.30554 11.9607C4.09998 12.098 3.93976 12.2932 3.84515 12.5216C3.75054 12.7501 3.72579 13.0014 3.77402 13.2439C3.82225 13.4863 3.9413 13.7091 4.11612 13.8839C4.29093 14.0587 4.51366 14.1778 4.75614 14.226C4.99861 14.2742 5.24995 14.2495 5.47835 14.1549C5.70676 14.0602 5.90199 13.9 6.03934 13.6945C6.17669 13.4889 6.25 13.2472 6.25 13C6.25 12.6685 6.1183 12.3505 5.88388 12.1161C5.64946 11.8817 5.33152 11.75 5 11.75ZM15 0.5H5C3.67392 0.5 2.40215 1.02678 1.46447 1.96447C0.526784 2.90215 0 4.17392 0 5.5V20.5C0 21.8261 0.526784 23.0979 1.46447 24.0355C2.40215 24.9732 3.67392 25.5 5 25.5H15C16.3261 25.5 17.5979 24.9732 18.5355 24.0355C19.4732 23.0979 20 21.8261 20 20.5V5.5C20 4.17392 19.4732 2.90215 18.5355 1.96447C17.5979 1.02678 16.3261 0.5 15 0.5ZM17.5 20.5C17.5 21.163 17.2366 21.7989 16.7678 22.2678C16.2989 22.7366 15.663 23 15 23H5C4.33696 23 3.70107 22.7366 3.23223 22.2678C2.76339 21.7989 2.5 21.163 2.5 20.5V17.3C3.25499 17.7544 4.1188 17.9963 5 18H15C15.8812 17.9963 16.745 17.7544 17.5 17.3V20.5ZM17.5 13C17.5 13.663 17.2366 14.2989 16.7678 14.7678C16.2989 15.2366 15.663 15.5 15 15.5H5C4.33696 15.5 3.70107 15.2366 3.23223 14.7678C2.76339 14.2989 2.5 13.663 2.5 13V9.8C3.25499 10.2544 4.1188 10.4963 5 10.5H15C15.8812 10.4963 16.745 10.2544 17.5 9.8V13ZM15 8H5C4.33696 8 3.70107 7.73661 3.23223 7.26777C2.76339 6.79893 2.5 6.16304 2.5 5.5C2.5 4.83696 2.76339 4.20107 3.23223 3.73223C3.70107 3.26339 4.33696 3 5 3H15C15.663 3 16.2989 3.26339 16.7678 3.73223C17.2366 4.20107 17.5 4.83696 17.5 5.5C17.5 6.16304 17.2366 6.79893 16.7678 7.26777C16.2989 7.73661 15.663 8 15 8Z"/>
+                            </svg>
+                        </div>
+                        <p class="text-base">Backend</p>
+                    </button> 
+                    
+                    <button 
+                        class="stroke-[var(--selection-color)] flex bg-white gap-2 items-center rounded-lg px-5 py-3" 
+                        [ngClass]="{'skill-selected stroke-white':skillCategory==='TOOLS'}"
+                        (click)="onCategoryChange('TOOLS')"
+
+                    >
+                        <div>
+                            <svg width="19" height="14" fill="none" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7.75 7L1 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.49951 13H17.4995" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                
+                        </div>
+                        <p class="text-base">Outils</p>
+                    </button>
+                </div>
+
+                <div class="techno max-w-screen-sm grid grid-cols-2 gap-y-6 mt-8 items-center">
+
+                    <app-technology-card *ngFor="let techno of technoMap.get(skillCategory)"
+                        [technology]="techno"
+                        [customStyle]="'width:168px'"
+                    >
+                    </app-technology-card>
+
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div id="categories" class="flex gap-6 mt-8">
+                    <h3 class="text-lg font-medium">Projets réalisés</h3>
+                </div>
+
+                <div class="flex gap-4 h-full mt-4">
+
+                    <app-project-slider></app-project-slider>
+
+                </div>
+
+
+
+            </div>
+
+        </section>
     </div>
+
+
+
+    
+    
 </div>
+
+
+<p-popover #op>
+    <div class="flex flex-col gap-4 bg-white" (mouseenter)="onPopoverContenthovered(op,$event)" (mouseleave)="op.hide()">
+        <div>
+            <span class="font-medium text-surface-900 dark:text-surface-0 block mb-2">Share this document</span>
+            <p-inputgroup>
+                <input pInputText value="https://primeng.org/12323ff26t2g243g423g234gg52hy25XADXAG3" readonly />
+                <p-inputgroup-addon>
+                    <i class="pi pi-copy"></i>
+                </p-inputgroup-addon>
+            </p-inputgroup>
+        </div>
+        <div>
+            <span class="font-medium text-surface-900 dark:text-surface-0 block mb-2">Invite Member</span>
+            <div class="flex">
+                <p-inputgroup>
+                    <input pInputText disabled />
+                    <button pButton label="Invite" icon="pi pi-users"></button>
+                </p-inputgroup>
+            </div>
+        </div>
+        <div>
+            <span class="font-medium text-surface-900 dark:text-surface-0 block mb-2">Team Members</span>
+            <ul class="list-none p-0 m-0 flex flex-col gap-4">
+                <li *ngFor="let member of members" class="flex items-center gap-2">
+                    <img [src]="'https://primefaces.org/cdn/primeng/images/demo/avatar/' + member.image" style="width: 32px" />
+                    <div>
+                        <span class="font-medium">{{ member.name }}</span>
+                        <div class="text-sm text-muted-color">{{ member.email }}</div>
+                    </div>
+                    <div class="flex items-center gap-2 text-muted-color ml-auto text-sm">
+                        <span>{{ member.role }}</span>
+                        <i class="pi pi-angle-down"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</p-popover>

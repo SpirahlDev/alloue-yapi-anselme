@@ -1,0 +1,1 @@
+export type IOrientation="LEFT" | "RIGHT";
