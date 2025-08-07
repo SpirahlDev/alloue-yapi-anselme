@@ -14,6 +14,9 @@ import { Technology } from "../../core/model/technology";
 import { TechnologyCardComponent } from "../../shared/components/technology-card/technology-card.component";
 import { ITechnology } from "../../core/interfaces/ITechnology";
 import { ProjectSliderComponent } from "../../shared/components/project-slider/project-slider.component";
+import { ThirdSectionComponent } from "../../shared/components/sections/third-section/third-section.component";
+import { ContactSectionComponent } from "../../shared/sections/contact-section/contact-section.component";
+import { FooterComponent } from "../../shared/components/footer/footer.component";
 
 
 @Component({
@@ -25,19 +28,15 @@ import { ProjectSliderComponent } from "../../shared/components/project-slider/p
     InputGroupAddonModule,
     CommonModule,
     InputGroup,
-    InputTextModule,
-    RippleModule, TechnologyCardComponent, ProjectSliderComponent],
+    InputTextModule,FooterComponent,
+    RippleModule, TechnologyCardComponent, ProjectSliderComponent, ThirdSectionComponent, ContactSectionComponent, FooterComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
 export class LandingComponent {
   isPopoverContentHovered:boolean = false;
 
-  skillCategory:SkillCategory="FRONTEND";
-
-  private skills:ISkill[]=[];
-  
-  public technoMap:Map<SkillCategory,ITechnology[]>=new Map<SkillCategory,ITechnology[]>;
+ 
   
   members = [
     { name: 'Amy Elsner', image: 'amyelsner.png', email: 'amy@email.com', role: 'Owner' },
@@ -93,31 +92,7 @@ export class LandingComponent {
     return ageYears;
   }
 
-  onCategoryChange(category:SkillCategory){
-    this.skillCategory=category;
-  }
-
-  ngOnInit(){
-    this.loadSkills();
-  }
-
-
-  loadSkills(){
-    const frontend:ISkill={
-      category: "FRONTEND",
-      technologies: [
-        new Technology('Angular'),
-        new Technology('Tailwindcss','svg'),
-        new Technology('Flutter'),
-        new Technology('Typescript/Javascript')
-      ],
-      project: []
-    }
-
-
-    this.skills.push(frontend);
-    this.technoMap.set(frontend.category,frontend.technologies);
-  }
+ 
 
 
 }
