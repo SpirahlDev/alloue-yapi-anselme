@@ -8,15 +8,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { PopoverModule } from 'primeng/popover';
 import { RippleModule } from 'primeng/ripple';
-import { ISkill, SkillCategory } from "../../core/interfaces/ISkill";
 import { generateSlug } from "../../core/utils/utils";
 import { Technology } from "../../core/model/technology";
 import { TechnologyCardComponent } from "../../shared/components/technology-card/technology-card.component";
-import { ITechnology } from "../../core/interfaces/ITechnology";
+import { ITechnology, TechnoCategory } from "../../core/interfaces/ITechnology";
 import { ProjectSliderComponent } from "../../shared/components/project-slider/project-slider.component";
 import { ThirdSectionComponent } from "../../shared/components/sections/third-section/third-section.component";
 import { ContactSectionComponent } from "../../shared/sections/contact-section/contact-section.component";
 import { FooterComponent } from "../../shared/components/footer/footer.component";
+import { Me } from "../../core/model/me";
 
 
 @Component({
@@ -27,22 +27,22 @@ import { FooterComponent } from "../../shared/components/footer/footer.component
     InputGroupAddonModule,
     InputGroupAddonModule,
     CommonModule,
-    InputGroup,
     InputTextModule,FooterComponent,
-    RippleModule, TechnologyCardComponent, ProjectSliderComponent, ThirdSectionComponent, ContactSectionComponent, FooterComponent],
+    RippleModule, ThirdSectionComponent, ContactSectionComponent, FooterComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
 export class LandingComponent {
   isPopoverContentHovered:boolean = false;
 
- 
-  
+  myData:Me=new Me();
+
   members = [
     { name: 'Amy Elsner', image: 'amyelsner.png', email: 'amy@email.com', role: 'Owner' },
     { name: 'Bernardo Dominic', image: 'bernardodominic.png', email: 'bernardo@email.com', role: 'Editor' },
     { name: 'Ioni Bowcher', image: 'ionibowcher.png', email: 'ioni@email.com', role: 'Viewer' }
   ];
+
 
   /**
    * That method is called when the mouse leaves the popover content, on the popover triger

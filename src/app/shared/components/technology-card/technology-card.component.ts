@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { ITechnology } from '../../../core/interfaces/ITechnology';
 import { CommonModule } from '@angular/common';
+import { Technology } from '../../../core/model/technology';
 
 @Component({
   selector: 'app-technology-card',
@@ -9,11 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './technology-card.component.css'
 })
 export class TechnologyCardComponent {
-  readonly technology=input<ITechnology>();
+  readonly technology=input<Technology>();
   readonly styleClass=input<string>('');
   readonly customStyle=input<string>('');
 
   getIconUrl(){
-    return `images/${this.technology()?.icon}`
+    return `${this.technology()?.icon.value}`
   }
 } 

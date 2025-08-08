@@ -1,0 +1,25 @@
+<ng-container [ngSwitch]="icon?.type">
+
+    <!-- PrimeNG Icons -->
+    <i *ngSwitchCase="'primeng'" 
+      [class]="'pi ' + primeNgIcon + ' ' + (icon?.class || '')"
+      [style.color]="icon?.color"
+      [style.font-size.px]="icon?.height || icon?.width"
+      [style.height.px]="icon?.height"
+      [style.width.px]="icon?.width">
+    </i>
+
+    <!-- SVG Icons -->
+    <ng-container *ngSwitchCase="'template'" 
+      [ngTemplateOutlet]="svgTemplate"
+      [ngTemplateOutletContext]="{ $implicit: icon }">
+    </ng-container>
+
+    <!-- URL Icons -->
+    <img *ngSwitchCase="'url'" 
+      [src]="stringIcon" 
+      [alt]="icon?.alt || ''"
+      [style.height.px]="icon?.height"
+      [style.width.px]="icon?.width"
+      [class]="icon?.class">
+</ng-container>

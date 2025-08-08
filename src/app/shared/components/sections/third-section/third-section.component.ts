@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ProjectSliderComponent } from "../../project-slider/project-slider.component";
 import { TechnologyCardComponent } from "../../technology-card/technology-card.component";
 import { CommonModule } from '@angular/common';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { PanelModule } from 'primeng/panel';
-import { SkillCategory, ISkill } from '../../../../core/interfaces/ISkill';
 import { Technology } from '../../../../core/model/technology';
-import { ITechnology } from '../../../../core/interfaces/ITechnology';
+import { ITechnology, SkillCategory } from '../../../../core/interfaces/ITechnology';
 import { TabsModule } from 'primeng/tabs';
+import { Me } from '../../../../core/model/me';
 
 @Component({
   selector: 'app-third-section',
@@ -16,43 +16,39 @@ import { TabsModule } from 'primeng/tabs';
   styleUrl: './third-section.component.css'
 })
 export class ThirdSectionComponent {
-  skillCategory:SkillCategory="FRONTEND";
 
-  private skills:ISkill[]=[];
-  
-  public technoMap:Map<SkillCategory,ITechnology[]>=new Map<SkillCategory,ITechnology[]>;
+  readonly cv=input<Me>();
 
-  onCategoryChange(category:SkillCategory){
-    this.skillCategory=category;
+  categoryList:string[]=[];
+  technologies:Technology[]=[];
+
+  tabIndex=0;
+
+  constructor(){
+    this.categoryList=Technology.getAllCategories();
+    console.log(this.categoryList);
   }
+
 
   ngOnInit(){
-    this.loadSkills();
+    this.loadTechnologies();
   }
 
 
-  loadSkills(){
-    const frontend:ISkill={
-      category: "FRONTEND",
-      technologies: [
-        new Technology('Angular'),
-        new Technology('Tailwindcss','svg'),
-        new Technology('Flutter'),
-        new Technology('Typescript/Javascript')
-      ],
-      project: []
-    }
-
-
-    this.skills.push(frontend);
-    this.technoMap.set(frontend.category,frontend.technologies);
+  loadTechnologies(){
+    this.technologies=this.cv()?.technologies || [];
+    console.log(this.cv()?.technologies)
   }
 
-  getSkill(tab_index:number){
-    return this.skills[tab_index];
+  getCurrentTechno(index:number){
+    const currentTech=this.technologies
+      .filter(techno=>techno.category==this.categoryList[index]);
+    console.log(currentTech,index);
+    return currentTech;
   }
 
-  getCurrentTechno(){
-    return this.technoMap.get(this.skillCategory);
+
+  getTechCatIcon(cat:string){
+    return cat ?`/icons/tech-categories/${cat}.svg` :'';
   }
 }
