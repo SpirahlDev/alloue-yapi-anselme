@@ -17,6 +17,9 @@
     --p-popover-content-padding:10px;
     --p-popover-arrow-offset:20px;
     --p-popover-shadow:0px 1px 8px #00000014;
+
+    --p-tabs-tablist-background:transparent!important;
+    --p-tabs-tabpanel-background:transparent!important;
 }
 
 @font-face {

@@ -16,12 +16,13 @@ import { TabsModule } from 'primeng/tabs';
   styleUrl: './third-section.component.css'
 })
 export class ThirdSectionComponent {
-   skillCategory:SkillCategory="FRONTEND";
+  skillCategory:SkillCategory="FRONTEND";
 
   private skills:ISkill[]=[];
   
   public technoMap:Map<SkillCategory,ITechnology[]>=new Map<SkillCategory,ITechnology[]>;
-   onCategoryChange(category:SkillCategory){
+
+  onCategoryChange(category:SkillCategory){
     this.skillCategory=category;
   }
 
@@ -45,5 +46,13 @@ export class ThirdSectionComponent {
 
     this.skills.push(frontend);
     this.technoMap.set(frontend.category,frontend.technologies);
+  }
+
+  getSkill(tab_index:number){
+    return this.skills[tab_index];
+  }
+
+  getCurrentTechno(){
+    return this.technoMap.get(this.skillCategory);
   }
 }
