@@ -1,0 +1,4 @@
+/* ::ng-deep .p-carousel-item-list{
+    display: grid!important;
+    grid-template-rows: 1fr 1fr;
+} */
