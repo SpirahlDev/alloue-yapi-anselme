@@ -4,22 +4,14 @@
         <app-slider-button [orientation]="'LEFT'"></app-slider-button>
     </button>
 
-    <p-carousel #carousel [showNavigators]="false" [value]="products" [numVisible]="1" [numScroll]="1" [circular]="false" [responsiveOptions]="responsiveOptions">
-        <ng-template let-product #item>
+    <p-carousel #carousel [showNavigators]="false" [value]="fakeTable" [numVisible]="1" [numScroll]="1" [circular]="false" [responsiveOptions]="responsiveOptions">
+        <ng-template let-offset #item>
         
             <div class="grid grid-cols-2 gap-4 h-full">
-                <div class="col-span-1">
-                    <app-project-card></app-project-card>
+                <div class="col-span-1" *ngFor="let project of getProjects(offset)">
+                    <app-project-card [projectData]="project"></app-project-card>
                 </div>
-                <div class="col-span-1">
-                    <app-project-card></app-project-card>
-                </div>
-                <div class="col-span-1">
-                    <app-project-card></app-project-card>
-                </div>
-                <div class="col-span-1">
-                    <app-project-card></app-project-card>
-                </div>
+               
             </div>
 
         </ng-template>

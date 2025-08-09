@@ -8,6 +8,7 @@ export class Technology implements ITechnology{
 
     declare name: string;
     declare category: TechnoCategory;
+    declare description?: string;
 
     declare cat:TechnoCategory;
     

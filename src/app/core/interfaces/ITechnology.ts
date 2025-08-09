@@ -13,4 +13,5 @@ export interface ITechnology{
     name:string,
     category: TechnoCategory;
     icon?:Icon;
+    description?:string;
 }

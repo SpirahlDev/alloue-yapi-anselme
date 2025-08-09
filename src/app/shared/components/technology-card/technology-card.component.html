@@ -1,4 +1,7 @@
-<div class="techno-item col-span-1 w-fit">
+<div class="techno-item col-span-1 w-fit flex flex-col items-center">
     <img [src]="getIconUrl()" [style]="customStyle()" [alt]="technology()?.name">
-    <p class="text-center mt-2">{{name}}</p>
+    <p class="text-center mt-2 font-medium">{{name}}</p>
+    @if (description) {
+        <p class="text-center text-sm text-gray-600 mt-1">{{description}}</p>
+    }
 </div> 

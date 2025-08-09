@@ -27,7 +27,6 @@ export class RealisationSectionComponent {
 
   constructor(){
     this.categoryList=Technology.getAllCategories();
-    console.log(this.categoryList);
   }
 
 
@@ -38,13 +37,11 @@ export class RealisationSectionComponent {
 
   loadTechnologies(){
     this.technologies=this.cv()?.technologies || [];
-    console.log(this.cv()?.technologies)
   }
 
   getCurrentTechno(index:number){
     const currentTech=this.technologies
       .filter(techno=>techno.category==this.categoryList[index]);
-    console.log(currentTech,index);
     return currentTech;
   }
 
@@ -62,5 +59,9 @@ export class RealisationSectionComponent {
       default:
         return "width:70px;"
     }
+  }
+
+  get projectList(){
+    return this.cv()?.projects || [];
   }
 }

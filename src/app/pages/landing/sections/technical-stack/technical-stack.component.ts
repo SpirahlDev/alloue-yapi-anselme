@@ -41,7 +41,6 @@ export class TechnicalStackComponent {
     getCurrentTechno(index:number){
       const currentTech=this.technologies
         .filter(techno=>techno.category==this.categoryList[index]);
-      console.log(currentTech,index);
       return currentTech;
     }
   

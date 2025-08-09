@@ -21,4 +21,8 @@ export class TechnologyCardComponent {
   get name(){
     return this.technology()?.name;
   }
+
+  get description(){
+    return this.technology()?.description;
+  }
 } 
