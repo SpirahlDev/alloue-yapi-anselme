@@ -6,23 +6,25 @@ export class Me{
     localisation:string="Abidjan, Côte d'Ivoire";
     projects : IProject[]=[];
     technologies : Technology[]=[];
-    hobbies:string[]=[];
+    skills:string[]=[];
     birthDate = new Date('2004-05-07');
 
-    constructor(){
-        this.loadHobbies();
-        this.loadSkills();
-    }
 
-    loadHobbies(){
-        this.hobbies=[
-            "Animation Japonaise",
-            "Électroniques",
-            "Jeux vidéo"
-        ]
+    constructor(){
+        this.loadSkills();
+        this.loadTechnologies();
     }
 
     loadSkills(){
+        this.skills=[
+            "Développement d'application Web",
+            "Développement d'application Mobile",
+            "UI/UX Design",
+            "Intégration et Déploiement continue (CI/CD)",
+        ]
+    }
+
+    loadTechnologies(){
         const technoModel:Technology[]=[];
 
         this.technoRawData.forEach((techo)=>{

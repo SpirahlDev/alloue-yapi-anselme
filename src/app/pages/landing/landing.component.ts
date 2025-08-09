@@ -17,6 +17,7 @@ import { ThirdSectionComponent } from "../../shared/components/sections/third-se
 import { ContactSectionComponent } from "../../shared/sections/contact-section/contact-section.component";
 import { FooterComponent } from "../../shared/components/footer/footer.component";
 import { Me } from "../../core/model/me";
+import { TagPillComponent } from "../../shared/ui-kit/tag-pill/tag-pill.component";
 
 
 @Component({
@@ -27,8 +28,8 @@ import { Me } from "../../core/model/me";
     InputGroupAddonModule,
     InputGroupAddonModule,
     CommonModule,
-    InputTextModule,FooterComponent,
-    RippleModule, ThirdSectionComponent, ContactSectionComponent, FooterComponent],
+    InputTextModule, FooterComponent,
+    RippleModule, ThirdSectionComponent, ContactSectionComponent, FooterComponent, TagPillComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

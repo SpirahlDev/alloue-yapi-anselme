@@ -68,7 +68,7 @@
                 <p-tabpanels class="tab-content-wrapper">
 
                     <p-tabpanel [value]="0" class="tab-panel-animated">
-                        <div class="tech-grid">
+                        <div class="grid grid-cols-2">
                             <app-technology-card *ngFor="let techno of getCurrentTechno(0); let i = index"
                                 [technology]="techno"
                                 [customStyle]="'width:168px'"
@@ -80,10 +80,10 @@
                     </p-tabpanel>
                     
                     <p-tabpanel [value]="1" class="tab-panel-animated">
-                        <div class="tech-grid">
+                        <div class="grid grid-cols-2">
                             <app-technology-card *ngFor="let techno of getCurrentTechno(1); let i = index"
                                 [technology]="techno"
-                                [customStyle]="'width:168px'"
+                                [customStyle]="'width:100px'"
                                 class="tech-card-animated"
                                 [style.animation-delay]="(i * 100) + 'ms'"
                             >

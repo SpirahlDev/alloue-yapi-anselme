@@ -22,7 +22,7 @@ export class ThirdSectionComponent {
   categoryList:string[]=[];
   technologies:Technology[]=[];
 
-  tabIndex=0;
+  tabIndex=1;
 
   constructor(){
     this.categoryList=Technology.getAllCategories();

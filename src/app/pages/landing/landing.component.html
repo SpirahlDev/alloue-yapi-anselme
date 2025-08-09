@@ -76,7 +76,7 @@
         </div>
 
         <div>
-            <h3 class="text-lg font-medium">Informations</h3>
+            <h3 class="text-xl font-medium">Informations</h3>
             <ul class="info-list flex items-center gap-6 mt-4 text-lg font-light">
                 <li>
                     <div class="flex gap-2 items-center">
@@ -103,26 +103,11 @@
         </div>    
         
         <div class="mt-8">
-            <h3 class="text-xl font-medium">Centres d’intèrêt</h3>
-            <ul class="info-list flex items-center gap-6 mt-4 text-xl">
-                <li class="">
-                    <div class="pill text-base">
-                       Animation Japonaise
-                    </div>
+            <h3 class="text-xl font-medium">Compétences</h3>
+            <ul class="info-list flex flex-wrap max-w-[80%] items-center gap-6 mt-4 text-xl">
+                <li class="" *ngFor="let skill of myData.skills">
+                    <app-tag-pill [value]="skill"></app-tag-pill>
                 </li>
-
-                <li class="">
-                    <div class="pill text-base">
-                       Électroniques
-                    </div>
-                </li>
-
-                <li class="">
-                    <div class="pill text-base">
-                       Jeux vidéos
-                    </div>
-                </li>
-                
             </ul>
         </div>
 
