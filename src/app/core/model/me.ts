@@ -69,7 +69,17 @@ export class Me{
     {
         name: "Angular",
         category: TechnoCategory.FRONTEND,
-        icon: {value:"/icons/technologies/angular.svg",type:"url"}
+        icon: {value:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg",type:"url"}
+    },
+    {
+        name: "TypeScript",
+        category: TechnoCategory.FRONTEND,
+        icon: {value:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",type:"url"}
+    },
+    {
+        name: "JavaScript",
+        category: TechnoCategory.FRONTEND,
+        icon: {value:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",type:"url"}
     },
     {
         name: "Java",
@@ -99,7 +109,7 @@ export class Me{
     {
         name: "Tailwind CSS",
         category: TechnoCategory.FRONTEND,
-        icon: {value:"/icons/technologies/tailwind-css.svg",type:"url"}
+        icon: {value:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",type:"url"}
     },
     {
         name: "Git",

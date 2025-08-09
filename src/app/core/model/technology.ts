@@ -1,4 +1,4 @@
-import { Icon } from "../../shared/components/ui-kit/icon/interfaces/Icon";
+import { Icon } from "../../shared/ui-kit/icon/interfaces/Icon";
 import { ITechnology, SkillCategory, TechnoCategory } from "../interfaces/ITechnology";
 import { generateSlug } from "../utils/utils";
 

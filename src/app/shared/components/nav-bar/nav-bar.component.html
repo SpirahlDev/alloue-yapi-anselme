@@ -35,7 +35,7 @@
             <ul class="flex gap-8">
                 @for (link of navLinks; track $index) {
                     <li>
-                        <a [routerLink]="'/'">
+                        <a [routerLink]="'/'" [fragment]="getAnchorName(link)">
                             <app-nav-link-item [linkNumber]="$index+1" [linkTitle]="link"></app-nav-link-item>
                         </a>
                     </li>

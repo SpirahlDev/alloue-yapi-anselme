@@ -1,0 +1,55 @@
+<app-section-title title="Stack technique" sectionId="04"></app-section-title>
+<section>
+
+    <div id="Technologies" class="mt-10 max-w-screen-md text-xl">
+        <p>
+            Passionné par les technologies modernes, je connais un large éventail d'outils et de langages qui me permettent de répondre aux besoins réels des utilisateurs.
+        </p>
+    </div>
+
+    <div class="flex gap-14 justify-between">
+
+        <div id="categories" class="w-full mt-8">
+            <p-tabs [(value)]="tabIndex" scrollable>
+                <p-tablist>
+                    <ng-template #previcon>
+                        <i class="pi pi-minus"></i>
+                    </ng-template>
+
+                    <p-tab *ngFor="let cat of categoryList;let i=index" [value]="i" class="">
+                        <div
+                            class="flex gap-2 items-center" 
+                        >
+                            <img
+                                style="stroke: var(--selection-color);"
+                                [src]="getTechCatIcon(cat)"
+                            >
+                        </div>
+                        <p class="text-base">{{cat | titlecase}}</p>
+                    </p-tab>
+                     
+                </p-tablist>
+                
+                <p-tabpanels class="tab-content-wrapper">
+
+                    <p-tabpanel *ngFor="let cat of categoryList;let pi=index" [value]="pi" [value]="pi" class="tab-panel-animated">
+                        <div class="grid grid-cols-2 lg:grid-cols-3 gap-y-8 xl:grid-cols-4 gap-x-3 lg:gap-x-20">
+                            <app-technology-card *ngFor="let techno of getCurrentTechno(pi); let i = index"
+                                [technology]="techno"
+                                [customStyle]="getCustomStyle(techno)"
+                                class="tech-card-animated"
+                                [style.animation-delay]="(i * 100) + 'ms'"
+                            >
+                            </app-technology-card>
+                        </div>
+                    </p-tabpanel>
+                    
+                </p-tabpanels>
+            </p-tabs>
+        </div>
+
+    </div>
+
+
+    
+</section>

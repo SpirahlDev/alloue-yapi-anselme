@@ -22,6 +22,11 @@
     --p-tabs-tabpanel-background:transparent!important;
 }
 
+html{
+    scroll-behavior: smooth;
+
+}
+
 @font-face {
  font-family: 'Outfit';
  src: url('../public/fonts/outfit/Outfit-VariableFont_wght.ttf');

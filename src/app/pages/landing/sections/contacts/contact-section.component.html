@@ -1,0 +1,55 @@
+<app-section-title title="Contacts" sectionId="@"></app-section-title>
+
+<section class="mt-10">
+    <div class="flex items-center justify-between">
+        <div id="phone" class="flex gap-2 items-center">
+            <div>
+                <svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.0004 5L16.6404 1.36C16.1263 1.12235 15.5667 0.999506 15.0004 1H5.00035C4.43403 0.999506 3.8744 1.12235 3.36035 1.36L7.00035 5H13.0004Z" fill="#D1C3FC"/>
+                    <path d="M16.64 1.35999L13 4.99999H7L3.36 1.35999C2.6582 1.67546 2.06228 2.18665 1.64369 2.83227C1.2251 3.47789 1.00161 4.23054 1 4.99999V23C1 24.0609 1.42143 25.0783 2.17157 25.8284C2.92172 26.5786 3.93913 27 5 27H15C16.0609 27 17.0783 26.5786 17.8284 25.8284C18.5786 25.0783 19 24.0609 19 23V4.99999C18.9984 4.23054 18.7749 3.47789 18.3563 2.83227C17.9377 2.18665 17.3418 1.67546 16.64 1.35999Z" fill="#0174C1" fill-opacity="0.1"/>
+                    <path d="M15 28H5C3.67392 28 2.40215 27.4732 1.46447 26.5355C0.526784 25.5979 0 24.3261 0 23V5C0 3.67392 0.526784 2.40215 1.46447 1.46447C2.40215 0.526784 3.67392 0 5 0H15C16.3261 0 17.5979 0.526784 18.5355 1.46447C19.4732 2.40215 20 3.67392 20 5V23C20 24.3261 19.4732 25.5979 18.5355 26.5355C17.5979 27.4732 16.3261 28 15 28ZM5 2C4.20435 2 3.44129 2.31607 2.87868 2.87868C2.31607 3.44129 2 4.20435 2 5V23C2 23.7956 2.31607 24.5587 2.87868 25.1213C3.44129 25.6839 4.20435 26 5 26H15C15.7956 26 16.5587 25.6839 17.1213 25.1213C17.6839 24.5587 18 23.7956 18 23V5C18 4.20435 17.6839 3.44129 17.1213 2.87868C16.5587 2.31607 15.7956 2 15 2H5Z" fill="#2B3145"/>
+                    <path d="M13 6H7C6.73478 6 6.48043 5.89464 6.29289 5.70711C6.10536 5.51957 6 5.26522 6 5C6 4.73478 6.10536 4.48043 6.29289 4.29289C6.48043 4.10536 6.73478 4 7 4H13C13.2652 4 13.5196 4.10536 13.7071 4.29289C13.8946 4.48043 14 4.73478 14 5C14 5.26522 13.8946 5.51957 13.7071 5.70711C13.5196 5.89464 13.2652 6 13 6Z" fill="#0174C1"/>
+                </svg>
+
+            </div>
+            <a class="text-lg" href="tel:{{phoneNumber}}" [ariaLabel]="'Numéro de téléphone'">{{phoneNumber}}</a>
+        </div>  
+        <div>
+            <button 
+                class="bg-[#FFB61D] hover:bg-[#e6a319] text-[#1b1b1b] hover:text-white font-medium py-3 px-8 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg transform hover:scale-105"
+                (click)="downloadCV()"
+                [ariaLabel]="'Télécharger mon CV complet'">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 16L7 11L8.4 9.6L11 12.2V4H13V12.2L15.6 9.6L17 11L12 16Z" fill="currentColor"/>
+                    <path d="M5 20V18H19V20H5Z" fill="currentColor"/>
+                </svg>
+                Voir mon CV complet
+            </button>
+        </div>
+    </div>
+    
+    <div id="mail" class="flex gap-2 items-center mt-5">
+        <div>
+           <svg width="31" height="24" viewBox="0 0 31 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.15" d="M28.8914 4.80005H4.85059V21.9131C4.85059 22.4666 5.07277 22.9974 5.46825 23.3888C5.86374 23.7802 6.40013 24 6.95943 24H28.8914C29.4507 24 29.9871 23.7802 30.3826 23.3888C30.7781 22.9974 31.0002 22.4666 31.0002 21.9131V6.88701C31.0002 6.33351 30.7781 5.80268 30.3826 5.4113C29.9871 5.01992 29.4507 4.80005 28.8914 4.80005Z" fill="#0174C1"/>
+                <path d="M26.3608 1.04346H1.89822C1.43235 1.04346 1.05469 1.4172 1.05469 1.87824V19.4087C1.05469 19.8697 1.43235 20.2435 1.89822 20.2435H26.3608C26.8267 20.2435 27.2043 19.8697 27.2043 19.4087V1.87824C27.2043 1.4172 26.8267 1.04346 26.3608 1.04346Z" stroke="#6A80B9" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M1.05469 5.21729L13.4505 14.3206C13.6505 14.4541 13.8862 14.5254 14.1274 14.5254C14.3686 14.5254 14.6044 14.4541 14.8043 14.3206L27.2043 5.21729" stroke="#6A80B9" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+
+        </div>
+        <a class="text-lg" href="mailto:{{email}}" [ariaLabel]="'Adresse email'">{{email}}</a>
+    </div>
+    
+    <!-- <div class="mt-8 flex justify-center">
+        <button 
+            class="bg-[#0174C1] hover:bg-[#015399] text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-sm"
+            (click)="downloadCV()"
+            [ariaLabel]="'Télécharger mon CV complet'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16L7 11L8.4 9.6L11 12.2V4H13V12.2L15.6 9.6L17 11L12 16Z" fill="currentColor"/>
+                <path d="M5 20V18H19V20H5Z" fill="currentColor"/>
+            </svg>
+            Voir mon CV complet
+        </button>
+    </div> -->
+</section>

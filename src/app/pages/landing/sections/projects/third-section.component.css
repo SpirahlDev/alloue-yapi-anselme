@@ -75,7 +75,7 @@
 
 .tech-card-animated:hover {
     transform: translateY(-5px) scale(1.05);
-    filter: brightness(1.1);
+    filter: brightness(1.2);
 }
 
 @keyframes slideInFromBottom {

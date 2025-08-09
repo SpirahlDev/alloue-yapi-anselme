@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThirdSectionComponent } from './third-section.component';
+import { RealisationSectionComponent } from './third-section.component';
 
 describe('ThirdSectionComponent', () => {
-  let component: ThirdSectionComponent;
-  let fixture: ComponentFixture<ThirdSectionComponent>;
+  let component: RealisationSectionComponent;
+  let fixture: ComponentFixture<RealisationSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ThirdSectionComponent]
+      imports: [RealisationSectionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ThirdSectionComponent);
+    fixture = TestBed.createComponent(RealisationSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

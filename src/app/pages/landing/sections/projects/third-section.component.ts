@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { ProjectSliderComponent } from "../../project-slider/project-slider.component";
-import { TechnologyCardComponent } from "../../technology-card/technology-card.component";
+import { ProjectSliderComponent } from "../../../../shared/components/project-slider/project-slider.component";
+import { TechnologyCardComponent } from "../../../../shared/components/technology-card/technology-card.component";
 import { CommonModule } from '@angular/common';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { PanelModule } from 'primeng/panel';
@@ -8,21 +8,22 @@ import { Technology } from '../../../../core/model/technology';
 import { ITechnology, SkillCategory } from '../../../../core/interfaces/ITechnology';
 import { TabsModule } from 'primeng/tabs';
 import { Me } from '../../../../core/model/me';
+import { SectionTitleComponent } from "../../../../shared/ui-kit/section-title/section-title.component";
 
 @Component({
-  selector: 'app-third-section',
-  imports: [ProjectSliderComponent,TabsModule, TechnologyCardComponent,CommonModule,PanelModule],
+  selector: 'app-realisation-section',
+  imports: [ProjectSliderComponent, TabsModule, TechnologyCardComponent, CommonModule, PanelModule, SectionTitleComponent],
   templateUrl: './third-section.component.html',
   styleUrl: './third-section.component.css'
 })
-export class ThirdSectionComponent {
+export class RealisationSectionComponent {
 
   readonly cv=input<Me>();
 
   categoryList:string[]=[];
   technologies:Technology[]=[];
 
-  tabIndex=1;
+  tabIndex=0;
 
   constructor(){
     this.categoryList=Technology.getAllCategories();
@@ -50,5 +51,16 @@ export class ThirdSectionComponent {
 
   getTechCatIcon(cat:string){
     return cat ?`/icons/tech-categories/${cat}.svg` :'';
+  }
+
+  getCustomStyle(techno:Technology){
+    switch (techno.name) {
+      // case "Angular":
+      //     return "width:150px;"
+      // case "Tailwind CSS":
+      //     return "width:150px;"
+      default:
+        return "width:70px;"
+    }
   }
 }

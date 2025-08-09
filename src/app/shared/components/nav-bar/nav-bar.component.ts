@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NavLinkItemComponent } from "../nav-link-item/nav-link-item.component";
+import { NavLinkItemComponent } from "./nav-link-item/nav-link-item.component";
 import { INavLink } from '../../../core/interfaces/INavLink';
+import { generateSlug } from '../../../core/utils/utils';
 
 @Component({
   selector: 'app-nav-bar',
@@ -19,11 +20,18 @@ export class NavBarComponent {
       title:'À propos'
     },    
     {
-      title:'Mes compétences'
+      title:'Projets'
+    },    
+    {
+      title:'Stack technique'
     },    
     {
       title:'Contacts',
       customSymbol: '@'
     },
-  ]
+  ];
+
+  getAnchorName(nav:INavLink){
+    return `${generateSlug(nav.title)}`;
+  }
 }

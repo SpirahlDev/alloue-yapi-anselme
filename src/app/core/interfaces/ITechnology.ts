@@ -1,4 +1,4 @@
-import { Icon } from "../../shared/components/ui-kit/icon/interfaces/Icon";
+import { Icon } from "../../shared/ui-kit/icon/interfaces/Icon";
 
 export type SkillCategory = "FRONTEND" | "BACKEND" | "MOBILE" | "TOOLS" |  "DEVOPS";
 

@@ -5,7 +5,7 @@
 
     </div>
 
-    <div class="normal-section py-4 md:pt-36 flex relative">
+    <div class="normal-section py-4 md:pt-36 flex relative" id="accueil">
 
         <div class="left-welcome-word w-1/2 md:min-w-fit z-10 ">
             <p class="mt-4 text-[#373737] text-md md:text-xl font-light" style="word-spacing: 2px;">Bonjour, je suis</p>
@@ -52,7 +52,7 @@
 
     <div class="normal-section mt-8">
 
-        <div id="section-title" class="flex items-center gap-5">
+        <div id="propos" class="flex items-center gap-5">
             <span class="section-number text-xl">02</span>
             <h2> 
                 <span class="text-[var(--secondary-color)] text-2xl font-semibold">
@@ -112,8 +112,8 @@
         </div>
 
         <!-- THIRD SECTION -->
-        <app-third-section [cv]="myData"></app-third-section>
-        
+        <app-realisation-section [cv]="myData"></app-realisation-section>
+        <app-technical-stack [cv]="myData"></app-technical-stack>
         <!-- FOURTH SECTION -->
         <app-contact-section></app-contact-section>
     </div>

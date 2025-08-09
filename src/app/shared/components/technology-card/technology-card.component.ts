@@ -17,4 +17,8 @@ export class TechnologyCardComponent {
   getIconUrl(){
     return `${this.technology()?.icon.value}`
   }
+
+  get name(){
+    return this.technology()?.name;
+  }
 } 
