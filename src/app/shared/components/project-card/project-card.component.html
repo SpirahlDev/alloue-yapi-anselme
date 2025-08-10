@@ -1,14 +1,20 @@
 <div class="w-fit">
-    <div class="max-w-md w-60 bg-white rounded-lg  p-4">
+    <div (click)="emitClickEvent()" [class]="cardClasses">
         <div class="flex items-center mb-1">
             <div class="flex items-center mr-3">
-                <span class="text-xl font-bold">&lt;</span>
-                <span class="text-xl font-bold">&gt;</span>
+                <span class="text-xl font-bold" [class]="isSelected() ? 'text-[#0174C1]' : 'text-gray-600'">&lt;</span>
+                <span class="text-xl font-bold" [class]="isSelected() ? 'text-[#0174C1]' : 'text-gray-600'">&gt;</span>
             </div>
-            <h1 class="text-base font-semibold text-gray-800">{{project?.title}}</h1>
+            <h1 class="text-base font-semibold" [class]="isSelected() ? 'text-[#0174C1]' : 'text-gray-800'">{{project?.title}}</h1>
         </div>
-        <p class="text-gray-500 text-sm leading-relaxed">
+        <p class="text-sm leading-relaxed" [class]="isSelected() ? 'text-gray-600' : 'text-gray-500'">
            {{project?.placeholder}}
         </p>
+        
+        @if (isSelected()) {
+            <div class="mt-2 flex justify-end">
+                <div class="w-2 h-2 bg-[#0174C1] rounded-full animate-pulse"></div>
+            </div>
+        }
     </div>
 </div>

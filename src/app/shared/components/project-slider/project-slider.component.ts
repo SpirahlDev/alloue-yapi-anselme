@@ -15,116 +15,17 @@ import { CommonModule } from '@angular/common';
 export class ProjectSliderComponent {
 
   readonly projects=input<Project[]>([]);
+  readonly selectedProject=input<Project|null>(null);
   @Output() onProjectSelect:EventEmitter<Project>=new EventEmitter<Project>();
 
-  readonly PROJECTS_BY_SLIDES=4;
-
-  fakeTable:number[]=[];
-
-  products=[
-    {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },  {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },{
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },  {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },{
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },  {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },{
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },  {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    }
-  ];
-
-  responsiveOptions: any[] | undefined;
-
-  ngOnInit(){
-    this.createFakeTable();
-  }
-
-  createFakeTable(){
-    const dummiesTabsSize=Math.round(this.projects().length/4);
-    console.log(dummiesTabsSize);
-    for (let index = 0; index < dummiesTabsSize; index++) {
-      this.fakeTable.push(index)
-    }
+  readonly PROJECTS_PER_PAGE = 4;
+  
+  /**
+   * Calcule le nombre de pages nécessaires et retourne les index de pages
+   */
+  get pageIndexes(): number[] {
+    const totalPages = Math.ceil(this.projects().length / this.PROJECTS_PER_PAGE);
+    return Array.from({ length: totalPages }, (_, index) => index);
   }
 
   /**
@@ -134,10 +35,18 @@ export class ProjectSliderComponent {
    * @param offset 
    * @returns 
    */
-  getProjects(pageIndex:number){
-    const startIndex=pageIndex*this.PROJECTS_BY_SLIDES;
-    const endIndex=startIndex+this.PROJECTS_BY_SLIDES;
+  getProjectsForPage(pageIndex: number): Project[] {
+    const startIndex = pageIndex * this.PROJECTS_PER_PAGE;
+    const endIndex = startIndex + this.PROJECTS_PER_PAGE;
+    
+    return this.projects().slice(startIndex, endIndex);
+  }
 
-    return this.projects().slice(startIndex,endIndex);
+  emitSelection(project:Project){
+    this.onProjectSelect.emit(project);
+  }
+
+  isProjectSelected(project: Project): boolean {
+    return this.selectedProject()?.title === project.title;
   }
 }

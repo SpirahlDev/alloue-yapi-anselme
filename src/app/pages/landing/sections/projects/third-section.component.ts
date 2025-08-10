@@ -9,6 +9,7 @@ import { ITechnology, SkillCategory } from '../../../../core/interfaces/ITechnol
 import { TabsModule } from 'primeng/tabs';
 import { Me } from '../../../../core/model/me';
 import { SectionTitleComponent } from "../../../../shared/ui-kit/section-title/section-title.component";
+import { Project } from '../../../../core/model/project';
 
 @Component({
   selector: 'app-realisation-section',
@@ -22,7 +23,7 @@ export class RealisationSectionComponent {
 
   categoryList:string[]=[];
   technologies:Technology[]=[];
-
+  selectedProject:Project|null=null;
   tabIndex=0;
 
   constructor(){
@@ -32,6 +33,7 @@ export class RealisationSectionComponent {
 
   ngOnInit(){
     this.loadTechnologies();
+    this.loadDefaultProject();
   }
 
 
@@ -63,5 +65,18 @@ export class RealisationSectionComponent {
 
   get projectList(){
     return this.cv()?.projects || [];
+  }
+
+  loadDefaultProject(){
+    // Sélectionner le premier projet par défaut
+    const projects = this.projectList;
+    if (projects && projects.length > 0) {
+      this.selectedProject = projects[0];
+    }
+  }
+
+  onProjectSelection(project:Project){
+    console.log("Projet selectionné",project);
+    this.selectedProject=project;
   }
 }
