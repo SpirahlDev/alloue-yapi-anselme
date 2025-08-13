@@ -7,7 +7,7 @@ import { PanelModule } from 'primeng/panel';
 import { Technology } from '../../../../core/model/technology';
 import { ITechnology, SkillCategory } from '../../../../core/interfaces/ITechnology';
 import { TabsModule } from 'primeng/tabs';
-import { Me } from '../../../../core/model/me';
+import { AnselmeAlloue } from '../../../../core/model/anselme-alloue';
 import { SectionTitleComponent } from "../../../../shared/ui-kit/section-title/section-title.component";
 import { Project } from '../../../../core/model/project';
 
@@ -19,7 +19,7 @@ import { Project } from '../../../../core/model/project';
 })
 export class RealisationSectionComponent {
 
-  readonly cv=input<Me>();
+  readonly cv=input<AnselmeAlloue>();
 
   categoryList:string[]=[];
   technologies:Technology[]=[];

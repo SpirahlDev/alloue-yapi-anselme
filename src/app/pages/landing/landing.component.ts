@@ -10,7 +10,7 @@ import { RippleModule } from 'primeng/ripple';
 import { RealisationSectionComponent } from "./sections/projects/third-section.component";
 import { ContactSectionComponent } from "./sections/contacts/contact-section.component";
 import { FooterComponent } from "../../shared/components/footer/footer.component";
-import { Me } from "../../core/model/me";
+import { PersonalDataService } from "../../core/services/personal-data.service";
 import { TagPillComponent } from "../../shared/ui-kit/tag-pill/tag-pill.component";
 import { TechnicalStackComponent } from "./sections/technical-stack/technical-stack.component";
 import { SectionTitleComponent } from "../../shared/ui-kit/section-title/section-title.component";
@@ -32,7 +32,7 @@ import { SectionTitleComponent } from "../../shared/ui-kit/section-title/section
 export class LandingComponent {
   isPopoverContentHovered:boolean = false;
 
-  myData:Me=new Me();
+  constructor(public personalDataService: PersonalDataService) {}
 
   /**
    * That method is called when the mouse leaves the popover content, on the popover triger
@@ -62,24 +62,7 @@ export class LandingComponent {
 
 
   getAge(){
-    const currentDate = new Date();
-    const birthDate = new Date('2004-05-07');
-    
-    let ageYears = currentDate.getFullYear() - birthDate.getFullYear();
-    let ageMonths = currentDate.getMonth() - birthDate.getMonth();
-    let ageDays = currentDate.getDate() - birthDate.getDate();
-
-    if (ageDays < 0) {
-        ageMonths--;
-        ageDays += new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
-    }
-    
-    if (ageMonths < 0) {
-        ageYears--;
-        ageMonths += 12;
-    }
-    
-    return ageYears;
+    return this.personalDataService.age;
   }
 
  

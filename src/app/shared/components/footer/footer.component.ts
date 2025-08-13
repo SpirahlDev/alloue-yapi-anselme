@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PersonalDataService } from '../../../core/services/personal-data.service';
+import { AnselmeAlloue } from '../../../core/model/anselme-alloue';
 
 @Component({
   selector: 'app-footer',
@@ -7,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  currentDate=new Date();
+  currentDate = new Date();
+  me: AnselmeAlloue;
+
+  constructor(private personalDataService: PersonalDataService) {
+    this.me = this.personalDataService.me as AnselmeAlloue;
+  }
 }

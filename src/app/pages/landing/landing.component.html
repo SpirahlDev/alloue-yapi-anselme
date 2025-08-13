@@ -90,16 +90,16 @@
         <div class="mt-8">
             <h3 class="text-xl font-medium">Compétences</h3>
             <ul class="info-list flex flex-wrap max-w-[80%] items-center gap-6 mt-4 text-xl">
-                <li class="" *ngFor="let skill of myData.skills">
+                <li class="" *ngFor="let skill of personalDataService.skills">
                     <app-tag-pill [value]="skill"></app-tag-pill>
                 </li>
             </ul>
         </div>
 
         <!-- THIRD SECTION -->
-        <app-realisation-section [cv]="myData"></app-realisation-section>
+        <app-realisation-section [cv]="personalDataService.me"></app-realisation-section>
         
-        <app-technical-stack [cv]="myData"></app-technical-stack>
+        <app-technical-stack [cv]="personalDataService.me"></app-technical-stack>
         <!-- FOURTH SECTION -->
         <app-contact-section></app-contact-section>
     </div>

@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Me } from '../../../../core/model/me';
+import { AnselmeAlloue } from '../../../../core/model/anselme-alloue';
 import { CommonModule } from '@angular/common';
 import { PanelModule } from 'primeng/panel';
 import { TabsModule } from 'primeng/tabs';
@@ -15,7 +15,7 @@ import { SectionTitleComponent } from "../../../../shared/ui-kit/section-title/s
   styleUrl: './technical-stack.component.css'
 })
 export class TechnicalStackComponent {
-  readonly cv=input<Me>();
+  readonly cv=input<AnselmeAlloue>();
 
   categoryList:string[]=[];
     technologies:Technology[]=[];
