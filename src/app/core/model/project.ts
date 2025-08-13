@@ -6,6 +6,7 @@ export class Project implements IProject{
     declare description: string;
     declare link?: string | undefined;
     declare screenshots?: string[] | undefined;
+    declare tags?: string[] | undefined;
     
     constructor(projectRawData:IProject){
         Object.assign(this,projectRawData);

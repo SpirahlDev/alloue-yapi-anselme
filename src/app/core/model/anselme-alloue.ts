@@ -172,7 +172,8 @@ private projectRawData: IProject[] = [
             "/assets/projects/monbarra/screenshot1.png",
             "/assets/projects/monbarra/screenshot2.png",
             "/assets/projects/monbarra/screenshot3.png"
-        ]
+        ],
+        tags: ["Angular", "Laravel", "MySQL", "Web Application", "Full Stack", "Matching Algorithm"]
     },
     {
         title: "API REST E-commerce",
@@ -182,7 +183,8 @@ private projectRawData: IProject[] = [
         screenshots: [
             "/assets/projects/ecommerce-api/api-docs.png",
             "/assets/projects/ecommerce-api/architecture.png"
-        ]
+        ],
+        tags: ["Java", "Quarkus", "PostgreSQL", "API Backend", "JWT", "E-commerce", "Microservices"]
     },
     {
         title: "LifeMag",
@@ -191,7 +193,8 @@ private projectRawData: IProject[] = [
         link: "",
         screenshots: [
             "/assets/projects/lifemag/screenshot1.png"
-        ]
+        ],
+        tags: ["Laravel", "Angular", "MySQL", "Web Application", "CMS", "PDF Management"]
     },
     {
         title: "PremierScore",
@@ -200,7 +203,8 @@ private projectRawData: IProject[] = [
         link: "",
         screenshots: [
             "/assets/projects/premierscore/screenshot1.png"
-        ]
+        ],
+        tags: ["Quarkus", "Angular", "PostgreSQL", "Système de gestion", "Real-time", "Sports", "Tournament Management"]
     },
     {
         title: "Plateforme de vente aux enchères",
@@ -209,7 +213,8 @@ private projectRawData: IProject[] = [
         link: "",
         screenshots: [
             "/assets/projects/auction/screenshot1.png"
-        ]
+        ],
+        tags: ["Web Application", "Real-time", "Payment System", "Auction", "E-commerce", "Angular"]
     },
     {
         title: "REX Hotel - Gestion de réservation",
@@ -218,7 +223,8 @@ private projectRawData: IProject[] = [
         link: "",
         screenshots: [
             "/assets/projects/rexhotel/screenshot1.png"
-        ]
+        ],
+        tags: ["Système de gestion", "Hotel Management", "Booking System", "Database Design", "UML Modeling"]
     },
     {
         title: "AbidjanActu",
@@ -227,7 +233,8 @@ private projectRawData: IProject[] = [
         link: "",
         screenshots: [
             "/assets/projects/abidjanactu/screenshot1.png"
-        ]
+        ],
+        tags: ["Web Application", "CMS", "SEO", "News Platform", "Responsive Design"]
     },
     {
         title: "Plateforme de prestation de service de livraison",
@@ -236,7 +243,8 @@ private projectRawData: IProject[] = [
         link: "",
         screenshots: [
             "/assets/projects/livraison/screenshot1.png"
-        ]
+        ],
+        tags: ["Web Application", "Geolocation", "Real-time Tracking", "Delivery Service", "Mobile First"]
     },
     {
         title: "Plateforme de transfert sécurisé de fichiers interentreprises",
@@ -245,7 +253,8 @@ private projectRawData: IProject[] = [
         link: "",
         screenshots: [
             "/assets/projects/filetransfer/screenshot1.png"
-        ]
+        ],
+        tags: ["Security", "PGP Encryption", "SFTP", "File Transfer", "Enterprise", "Angular", "Node.js"]
     },
     {
         title: "Application d’authentification et de validation de signatures électroniques",
@@ -254,7 +263,8 @@ private projectRawData: IProject[] = [
         link: "",
         screenshots: [
             "/assets/projects/signature-validation/screenshot1.png"
-        ]
+        ],
+        tags: ["Angular", "Quarkus", "Digital Signature", "Security", "Real-time", "Cryptoneo", "SSE"]
     }
 ];
 
