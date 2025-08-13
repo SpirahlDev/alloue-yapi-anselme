@@ -1,80 +1,219 @@
 <app-section-title title="Projets" sectionId="03"></app-section-title>
 
-
-<section class="flex flex-col">
-    <div id="categories" class="flex gap-6 mt-8">
-        <h3 class="text-xl font-medium">Projets réalisés</h3>
+<section class="flex flex-col gap-8 mt-10">
+    <!-- Filtres -->
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-wrap gap-3">
+            <button 
+                [class]="'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ' + (selectedCategory === 'all' ? 'bg-[var(--selection-color)] text-white shadow-md' : 'bg-gray-100 text-gray-700 hover:bg-gray-200')"
+                (click)="selectCategory('all')">
+                Tous les projets
+            </button>
+            @for (category of projectCategories; track category) {
+                <button 
+                    [class]="'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ' + (selectedCategory === category ? 'bg-[var(--selection-color)] text-white shadow-md' : 'bg-gray-100 text-gray-700 hover:bg-gray-200')"
+                    (click)="selectCategory(category)">
+                    {{category}}
+                </button>
+            }
+        </div>
     </div>
 
-    <div class="flex gap-10 justify-between h-full mt-4">
-
-        <div class="w-full">
-            <app-project-slider 
-                (onProjectSelect)="onProjectSelection($event)" 
-                [projects]="projectList" 
-                [selectedProject]="selectedProject">
-            </app-project-slider>
-        </div>    
-        
-        <div class="w-4/5">
-            <div class="bg-white border border-[#F2F2F2] rounded-lg p-4 h-full max-h-full flex flex-col">
-                @if (selectedProject) {
-                    <div class="header flex justify-between items-center mb-4">
-                        <h3 class="text-lg font-semibold text-gray-800">{{selectedProject.title}}</h3>
-                        <div class="flex gap-2">
-                            @if (selectedProject.link) {
-                                <a 
-                                    [href]="selectedProject.link" 
-                                    target="_blank"
-                                    class="bg-[#0174C1] hover:bg-[#015399] text-white px-3 py-1 rounded text-sm transition-colors"
-                                    [ariaLabel]="'Voir le projet ' + selectedProject.title">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="inline mr-1">
-                                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                                    </svg>
-                                    Voir
-                                </a>
-                            }
-                        </div>
-                    </div>
-
-                    <div class="flex-1 max-h-[280px] overflow-y-auto">
-                        <div class="space-y-4 h-full">
-                            <div>
-                                <h4 class="text-sm font-medium text-gray-600 mb-2">Description</h4>
-                                <p class="text-gray-700 leading-relaxed text-sm">
-                                    {{selectedProject.description}}
-                                </p>
+    <!-- Grille des projets -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        @for (project of filteredProjects; track project.title; let i = $index) {
+            <div 
+                class="project-card bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                (click)="openProjectModal(project)"
+                [style.animation-delay]="i * 100 + 'ms'">
+                
+                <!-- Image du projet -->
+                <div class="relative h-40 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
+                    @if (project.screenshots && project.screenshots[0]) {
+                        <img 
+                            [src]="project.screenshots[0]" 
+                            [alt]="project.title"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
+                    } @else {
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-gray-400">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" class="mx-auto mb-2">
+                                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                </svg>
+                                <p class="text-sm">Aperçu non disponible</p>
                             </div>
-
-                            @if (selectedProject.screenshots && selectedProject.screenshots.length > 0) {
-                                <div>
-                                    <h4 class="text-sm font-medium text-gray-600 mb-2">Captures d'écran</h4>
-                                    <div class="grid grid-cols-2 gap-2">
-                                        @for (screenshot of selectedProject.screenshots; track screenshot) {
-                                            <img 
-                                                [src]="screenshot" 
-                                                [alt]="'Capture d\'écran de ' + selectedProject.title"
-                                                class="w-full h-20 object-cover rounded border border-gray-200 hover:scale-105 transition-transform cursor-pointer"
-                                                loading="lazy">
-                                        }
-                                    </div>
-                                </div>
-                            }
                         </div>
-                    </div>
-                } @else {
-                    <div class="flex items-center justify-center h-full text-gray-500">
-                        <div class="text-center">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" class="mx-auto mb-2 text-gray-300">
-                                <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                    }
+                    
+                    <!-- Overlay avec icône de lien -->
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-full p-3">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-700">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15,3 21,3 21,9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
                             </svg>
-                            <p class="text-sm">Sélectionnez un projet pour voir les détails</p>
                         </div>
                     </div>
-                }
+                </div>
+
+                <!-- Contenu de la carte -->
+                <div class="p-5">
+                    <div class="flex items-start justify-between mb-2">
+                        <h4 class="text-base font-semibold text-gray-900 group-hover:text-[var(--selection-color)] transition-colors">
+                            {{project.title}}
+                        </h4>
+                        @if (project.link) {
+                            <div class="flex-shrink-0 ml-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full" title="Projet disponible en ligne"></div>
+                            </div>
+                        }
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2">
+                        {{project.placeholder}}
+                    </p>
+
+                    <!-- Technologies (si disponibles dans les données du projet) -->
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        @if (getProjectTechnologies(project); as techs) {
+                            @for (tech of techs.slice(0, 3); track tech) {
+                                <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium">
+                                    {{tech}}
+                                </span>
+                            }
+                            @if (techs.length > 3) {
+                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium">
+                                    +{{techs.length - 3}}
+                                </span>
+                            }
+                        }
+                    </div>
+
+                    <!-- Footer de la carte -->
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-500">
+                            {{getProjectCategory(project)}}
+                        </span>
+                        <div class="flex items-center text-[var(--selection-color)] text-sm font-medium">
+                            Voir détails
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Message si aucun projet -->
+    @if (filteredProjects.length === 0) {
+        <div class="text-center py-12">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="mx-auto mb-4 text-gray-300">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Aucun projet trouvé</h3>
+            <p class="text-gray-600">Essayez de sélectionner une autre catégorie.</p>
+        </div>
+    }
+</section>
+
+<!-- Modal de détails du projet -->
+@if (selectedProjectForModal) {
+    <div 
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        (click)="closeProjectModal()"
+        [@fadeInOut]>
+        <div 
+            class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+            (click)="$event.stopPropagation()"
+            [@slideInOut]>
+            
+            <!-- Header du modal -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-1">{{selectedProjectForModal.title}}</h2>
+                    <p class="text-gray-600">{{getProjectCategory(selectedProjectForModal)}}</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    @if (selectedProjectForModal.link) {
+                        <a 
+                            [href]="selectedProjectForModal.link" 
+                            target="_blank"
+                            class="bg-[var(--selection-color)] hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                            </svg>
+                            Voir le projet
+                        </a>
+                    }
+                    <button 
+                        (click)="closeProjectModal()"
+                        class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenu du modal -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Description et détails -->
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">À propos du projet</h3>
+                            <p class="text-gray-700 leading-relaxed">{{selectedProjectForModal.description}}</p>
+                        </div>
+
+                        <!-- Technologies utilisées -->
+                        @if (getProjectTechnologies(selectedProjectForModal); as techs) {
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3">Technologies utilisées</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    @for (tech of techs; track tech) {
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
+                                            {{tech}}
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Screenshots -->
+                    <div>
+                        @if (selectedProjectForModal.screenshots && selectedProjectForModal.screenshots.length > 0) {
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Captures d'écran</h3>
+                            <div class="grid grid-cols-1 gap-4">
+                                @for (screenshot of selectedProjectForModal.screenshots; track screenshot) {
+                                    <div class="relative group">
+                                        <img 
+                                            [src]="screenshot" 
+                                            [alt]="'Capture d\'écran de ' + selectedProjectForModal.title"
+                                            class="w-full rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-lg"></div>
+                                    </div>
+                                }
+                            </div>
+                        } @else {
+                            <div class="text-center py-12 bg-gray-50 rounded-lg">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="mx-auto mb-3 text-gray-300">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21,15 16,10 5,21"></polyline>
+                                </svg>
+                                <p class="text-gray-500">Aucune capture d'écran disponible</p>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
-
-
+}

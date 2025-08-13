@@ -1,132 +1,185 @@
-
-.skill-selected{
-    background-color: var(--selection-color);
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+/* Animation d'entrée pour les cartes projet */
+.project-card {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
 }
 
-.skill-selected p{
-    color: white;
+/* Effet de troncature pour les textes longs */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Smooth transitions for tabs */
-.smooth-tabs ::ng-deep .p-tabview-panels {
-    overflow: hidden;
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.smooth-tabs ::ng-deep .p-tabview-panel {
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.tab-content-transition {
-    transition: all 0.3s ease-in-out;
-}
-
-.animate-fadeIn {
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Enhanced hover effects */
-.smooth-tabs ::ng-deep .p-tab:hover {
-    transform: translateY(-2px);
-    transition: all 0.2s ease-in-out;
-}
-
-.smooth-tabs ::ng-deep .p-tab.p-tab-active {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Smooth content transitions */
-.tab-content-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.tab-panel-animated {
-    animation: slideInFromBottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 0;
-    align-items: center;
-    margin-top: 2rem;
-}
-
-.tech-card-animated {
+/* Animation d'apparition des cartes */
+@keyframes slideInUp {
+  from {
     opacity: 0;
-    transform: translateY(20px) scale(0.95);
-    animation: cardSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    transition: transform 0.3s ease-in-out;
-}
-
-.tech-card-animated:hover {
-    transform: translateY(-5px) scale(1.05);
-    filter: brightness(1.2);
-}
-
-@keyframes slideInFromBottom {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes cardSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Enhanced tab switching with crossfade */
-::ng-deep .p-tabview-panels {
-    position: relative;
-    min-height: 400px;
-}
-
-::ng-deep .p-tabview-panel {
-    position: absolute;
-    width: 100%;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-}
-
-::ng-deep .p-tabview-panel[aria-hidden="false"] {
+    transform: translateY(20px);
+  }
+  to {
     opacity: 1;
-    transform: translateX(0);
-    position: relative;
+    transform: translateY(0);
+  }
 }
 
-.container {
-    border: 1px dashed transparent;
-    border-image: repeating-linear-gradient(
-        90deg,
-        black 0,
-        black 10px,
-        transparent 10px,
-        transparent 20px
-    ) 1;
+/* Hover effects pour les boutons de filtre */
+.filter-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet de pulsation pour les indicateurs de disponibilité */
+.availability-indicator {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Style pour le modal avec backdrop blur */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Scrollbar personnalisée pour le modal */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation pour l'overlay des images */
+.project-image-overlay {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet de zoom sur les images */
+.project-image {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Animation staggerée pour les cartes */
+.project-card:nth-child(1) { animation-delay: 0ms; }
+.project-card:nth-child(2) { animation-delay: 100ms; }
+.project-card:nth-child(3) { animation-delay: 200ms; }
+.project-card:nth-child(4) { animation-delay: 300ms; }
+.project-card:nth-child(5) { animation-delay: 400ms; }
+.project-card:nth-child(6) { animation-delay: 500ms; }
+
+/* Effet de glow pour les cartes sélectionnées */
+.project-card-selected {
+  box-shadow: 0 0 0 2px var(--selection-color), 0 8px 24px rgba(1, 116, 193, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Amélioration des transitions pour les états hover */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Animation pour les tags de technologies */
+.tech-tag {
+  transition: all 0.2s ease-in-out;
+}
+
+.tech-tag:hover {
+  transform: scale(1.05);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Style pour les états de chargement */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive design pour mobile */
+@media (max-width: 768px) {
+  .project-card {
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+  }
+}
+
+/* Animation pour les boutons de fermeture */
+.close-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+  background-color: rgba(239, 68, 68, 0.1);
+  color: rgb(239, 68, 68);
+}
+
+/* Effet de focus pour l'accessibilité */
+button:focus,
+.project-card:focus {
+  outline: 2px solid var(--selection-color);
+  outline-offset: 2px;
+}
+
+/* Animation subtile pour les screenshots dans le modal */
+.screenshot-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.screenshot-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
