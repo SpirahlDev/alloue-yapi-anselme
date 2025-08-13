@@ -33,7 +33,7 @@
                 <p-tabpanels class="tab-content-wrapper">
 
                     <p-tabpanel *ngFor="let cat of categoryList;let pi=index" [value]="pi" [value]="pi" class="tab-panel-animated">
-                        <div class="grid grid-cols-2 lg:grid-cols-3 gap-y-8 xl:grid-cols-4 gap-x-3 lg:gap-x-20">
+                        <div class="mt-6 grid grid-cols-2 lg:grid-cols-3 gap-y-8 xl:grid-cols-4 gap-x-3 lg:gap-x-20">
                             <app-technology-card *ngFor="let techno of getCurrentTechno(pi); let i = index"
                                 [technology]="techno"
                                 [customStyle]="getCustomStyle(techno)"

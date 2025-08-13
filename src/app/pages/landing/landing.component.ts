@@ -13,6 +13,7 @@ import { FooterComponent } from "../../shared/components/footer/footer.component
 import { Me } from "../../core/model/me";
 import { TagPillComponent } from "../../shared/ui-kit/tag-pill/tag-pill.component";
 import { TechnicalStackComponent } from "./sections/technical-stack/technical-stack.component";
+import { SectionTitleComponent } from "../../shared/ui-kit/section-title/section-title.component";
 
 
 @Component({
@@ -24,7 +25,7 @@ import { TechnicalStackComponent } from "./sections/technical-stack/technical-st
     InputGroupAddonModule,
     CommonModule,
     InputTextModule, FooterComponent,
-    RippleModule, RealisationSectionComponent, ContactSectionComponent, FooterComponent, TagPillComponent, TechnicalStackComponent],
+    RippleModule, RealisationSectionComponent, ContactSectionComponent, FooterComponent, TagPillComponent, TechnicalStackComponent, SectionTitleComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

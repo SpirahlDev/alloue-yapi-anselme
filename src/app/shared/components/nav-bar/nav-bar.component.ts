@@ -14,9 +14,6 @@ import { generateSlug } from '../../../core/utils/utils';
 export class NavBarComponent {
   navLinks:INavLink[] = [
     {
-      title: 'Accueil'
-    },
-    {
       title:'À propos'
     },    
     {
@@ -26,12 +23,12 @@ export class NavBarComponent {
       title:'Stack technique'
     },    
     {
-      title:'Contacts',
-      customSymbol: '@'
+      title:'Télécharger mon CV',
+      customAnchor: 'download-cv'
     },
   ];
 
   getAnchorName(nav:INavLink){
-    return `${generateSlug(nav.title)}`;
+    return nav.customAnchor ?? `${generateSlug(nav.title)}`;
   }
 }
