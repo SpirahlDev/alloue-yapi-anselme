@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AnselmeAlloue } from '../../../../core/model/anselme-alloue';
 import { SectionTitleComponent } from "../../../../shared/ui-kit/section-title/section-title.component";
 import { Project } from '../../../../core/model/project';
+import { ProjectCategory } from '../../../../core/interfaces/IProject';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { TabsModule } from 'primeng/tabs';
 
@@ -38,14 +39,10 @@ export class RealisationSectionComponent {
   selectedProjectForModal: Project | null = null;
   tabIndex: number = 0;
   
-  // Catégories de projets définies manuellement (avec "Tous" en premier)
+  // Catégories de projets avec "Tous" en premier puis les valeurs de l'enum
   projectCategories: string[] = [
     'Tous',
-    'Web Application',
-    'API Backend',
-    'Mobile App',
-    'E-commerce',
-    'Système de gestion'
+    ...Object.values(ProjectCategory)
   ];
 
   ngOnInit() {
@@ -62,7 +59,7 @@ export class RealisationSectionComponent {
     }
     const category = this.projectCategories[categoryIndex];
     return this.projectList.filter(project => 
-      this.getProjectCategory(project) === category
+      project.category === category
     );
   }
 
@@ -79,34 +76,8 @@ export class RealisationSectionComponent {
   }
 
   getProjectCategory(project: Project): string {
-    // Utiliser les tags pour déterminer la catégorie si disponible
-    if (project.tags && project.tags.length > 0) {
-      const categoryTags = project.tags.filter(tag => 
-        ['API Backend', 'Mobile App', 'E-commerce', 'Système de gestion', 'Web Application'].includes(tag)
-      );
-      if (categoryTags.length > 0) {
-        return categoryTags[0]; // Prendre la première catégorie trouvée
-      }
-    }
-    
-    // Fallback: logique basée sur le titre et description
-    const title = project.title.toLowerCase();
-    const description = project.description.toLowerCase();
-    
-    if (title.includes('api') || description.includes('api rest')) {
-      return 'API Backend';
-    }
-    if (title.includes('e-commerce') || description.includes('e-commerce')) {
-      return 'E-commerce';
-    }
-    if (title.includes('mobile') || title.includes('flutter')) {
-      return 'Mobile App';
-    }
-    if (title.includes('gestion') || title.includes('hotel') || description.includes('gestion')) {
-      return 'Système de gestion';
-    }
-    
-    return 'Web Application';
+    // Utiliser directement le champ category du projet
+    return project.category || ProjectCategory.WEB_APPLICATION;
   }
 
   getProjectTechnologies(project: Project): string[] {
@@ -114,7 +85,7 @@ export class RealisationSectionComponent {
     if (project.tags && project.tags.length > 0) {
       // Filtrer les tags pour ne garder que les technologies (pas les catégories)
       const techTags = project.tags.filter(tag => 
-        !['Web Application', 'API Backend', 'Mobile App', 'E-commerce', 'Système de gestion'].includes(tag)
+        !Object.values(ProjectCategory).includes(tag as ProjectCategory)
       );
       return techTags.length > 0 ? techTags : project.tags;
     }
@@ -148,5 +119,19 @@ export class RealisationSectionComponent {
     });
     
     return technologies.length > 0 ? [...new Set(technologies)] : ['Web', 'Application'];
+  }
+
+  getProjectCategoryIcon(categoryIndex: number): string {
+    const categoryIconMap: { [key: number]: string } = {
+      0: '', // Tous - pas d'icône spécifique dans le dossier
+      1: 'FRONTEND', // Web Application -> FRONTEND
+      2: 'BACKEND', // API Backend -> BACKEND  
+      3: 'MOBILE', // Mobile App -> MOBILE
+      4: '', // E-commerce - pas d'icône spécifique dans le dossier
+      5: 'TOOLS' // Système de gestion -> TOOLS
+    };
+    
+    const iconName = categoryIconMap[categoryIndex];
+    return iconName ? `/icons/tech-categories/${iconName}.svg` : '';
   }
 }

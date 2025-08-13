@@ -1,4 +1,4 @@
-import { IProject } from "../interfaces/IProject";
+import { IProject, ProjectCategory } from "../interfaces/IProject";
 import { ITechnology, TechnoCategory } from "../interfaces/ITechnology";
 import { Project } from "./project";
 import { Technology } from "./technology";
@@ -167,6 +167,7 @@ private projectRawData: IProject[] = [
         title: "MonBarra",
         placeholder: "Application web facilitant la mise en relation entre chercheurs d'emploi et employeurs",
         description: "MonBarra est une plateforme complète de recrutement qui permet aux chercheurs d'emploi de créer des profils détaillés et aux employeurs de publier des offres d'emploi. L'application inclut un système de matching intelligent basé sur les compétences, l'expérience et les préférences géographiques. Elle propose également la gestion des candidatures, un système de messagerie intégré et des tableaux de bord analytics pour les recruteurs.",
+        category: ProjectCategory.WEB_APPLICATION,
         link: "https://github.com/anselme-alloue/monbarra",
         screenshots: [
             "/assets/projects/monbarra/screenshot1.png",
@@ -179,6 +180,7 @@ private projectRawData: IProject[] = [
         title: "API REST E-commerce",
         placeholder: "API backend robuste pour plateforme e-commerce avec gestion complète des produits et commandes",
         description: "API REST développée avec Java et Quarkus pour une plateforme e-commerce. Elle gère l'authentification JWT, la gestion des utilisateurs, le catalogue produits, le panier d'achat, et le processus de commande complet. L'API inclut également un système de paiement intégré, la gestion des stocks en temps réel, et des endpoints d'administration pour la gestion des commandes et des statistiques de vente.",
+        category: ProjectCategory.API_BACKEND,
         link: "https://github.com/anselme-alloue/ecommerce-api",
         screenshots: [
             "/assets/projects/ecommerce-api/api-docs.png",
@@ -189,7 +191,8 @@ private projectRawData: IProject[] = [
     {
         title: "LifeMag",
         placeholder: "Plateforme de distribution de magazines et d’actualités",
-        description: "Application web Laravel + Angular permettant aux éditeurs de publier des magazines et aux lecteurs de les consulter en ligne. Gestion des comptes utilisateurs avec rôles et permissions, sécurisation des fichiers PDF et images de couverture, et back-office complet pour l’administration des publications.",
+        description: "Application web Laravel + Angular permettant aux éditeurs de publier des magazines et aux lecteurs de les consulter en ligne. Gestion des comptes utilisateurs avec rôles et permissions, sécurisation des fichiers PDF et images de couverture, et back-office complet pour l'administration des publications.",
+        category: ProjectCategory.WEB_APPLICATION,
         link: "",
         screenshots: [
             "/assets/projects/lifemag/screenshot1.png"
@@ -199,7 +202,8 @@ private projectRawData: IProject[] = [
     {
         title: "PremierScore",
         placeholder: "Application de gestion de tournois sportifs et e-sport",
-        description: "Plateforme web Quarkus + Angular permettant de créer et gérer des tournois, équipes, joueurs et matchs, avec un système de classement automatisé. L’application inclut des rôles distincts pour organisateurs, arbitres, spectateurs et participants, et un module d’API temps réel pour les scores.",
+        description: "Plateforme web Quarkus + Angular permettant de créer et gérer des tournois, équipes, joueurs et matchs, avec un système de classement automatisé. L'application inclut des rôles distincts pour organisateurs, arbitres, spectateurs et participants, et un module d'API temps réel pour les scores.",
+        category: ProjectCategory.MANAGEMENT_SYSTEM,
         link: "",
         screenshots: [
             "/assets/projects/premierscore/screenshot1.png"
@@ -209,57 +213,63 @@ private projectRawData: IProject[] = [
     {
         title: "Plateforme de vente aux enchères",
         placeholder: "Système complet d’enchères en ligne",
-        description: "Application web permettant de créer et participer à des ventes aux enchères en ligne, avec gestion des utilisateurs, mise en ligne d’articles, suivi en temps réel des enchères et système de paiement sécurisé.",
+        description: "Plateforme d'enchères en ligne développée avec Angular et Laravel, permettant aux utilisateurs de créer et participer à des ventes aux enchères. Gestion complète des utilisateurs avec système d'authentification, mise en ligne d'articles avec photos multiples, suivi en temps réel des enchères via WebSockets et système de paiement intégré. Interface responsive avec notifications push pour les enchères en cours et historique détaillé des transactions.",
+        category: ProjectCategory.ECOMMERCE,
         link: "",
         screenshots: [
             "/assets/projects/auction/screenshot1.png"
         ],
-        tags: ["Web Application", "Real-time", "Payment System", "Auction", "E-commerce", "Angular"]
+        tags: ["Angular", "Laravel", "WebSockets", "Real-time", "Payment System", "Auction", "E-commerce"]
     },
     {
         title: "REX Hotel - Gestion de réservation",
         placeholder: "Modélisation et conception d’un système de gestion d’hôtel haut de gamme",
-        description: "Modélisation complète du REX HOTEL, un hôtel 4 étoiles à Yamoussoukro avec 82 chambres, 1 penthouse, plusieurs restaurants, bars, terrasses, salles de conférence, piscine, spa et parking. Le système inclut la réservation en ligne, la gestion des disponibilités, la facturation et le suivi des services annexes.",
+        description: "Système de gestion hôtelière développé avec Laravel pour le REX HOTEL, établissement 4 étoiles à Yamoussoukro (82 chambres, 1 penthouse, restaurants, spa, salles de conférence). Plateforme de réservation en ligne avec calendrier de disponibilités, tarification dynamique et paiement sécurisé. Interface de gestion pour le personnel : check-in/check-out, facturation automatique, gestion des services (restauration, spa, parking) et tableau de bord avec statistiques d'occupation et revenus.",
+        category: ProjectCategory.MANAGEMENT_SYSTEM,
         link: "",
         screenshots: [
             "/assets/projects/rexhotel/screenshot1.png"
         ],
-        tags: ["Système de gestion", "Hotel Management", "Booking System", "Database Design", "UML Modeling"]
+        tags: ["Laravel", "MySQL", "Système de gestion", "Hotel Management", "Booking System", "Payment Integration"]
     },
     {
         title: "AbidjanActu",
         placeholder: "Site d’actualités locales et de diffusion d’informations",
-        description: "Plateforme web moderne pour la diffusion d’actualités en Côte d’Ivoire, avec gestion des articles, des catégories, de la publicité et optimisation pour le référencement SEO. Interface responsive adaptée aux lecteurs mobiles.",
+        description: "Site d'actualités développé avec Laravel pour la diffusion d'informations en Côte d'Ivoire. CMS complet avec gestion des articles, catégories, commentaires et système de modération. Interface frontend responsive utilisant Bootstrap, optimisée SEO avec meta-tags dynamiques et sitemap automatique. Espace administrateur pour la gestion des contenus, publicités et statistiques de lecture avec tableau de bord analytique.",
+        category: ProjectCategory.WEB_APPLICATION,
         link: "",
         screenshots: [
             "/assets/projects/abidjanactu/screenshot1.png"
         ],
-        tags: ["Web Application", "CMS", "SEO", "News Platform", "Responsive Design"]
+        tags: ["Laravel", "Bootstrap", "MySQL", "CMS", "SEO", "News Platform", "Analytics"]
     },
     {
         title: "Plateforme de prestation de service de livraison",
         placeholder: "Application web pour la mise en relation entre clients et livreurs",
-        description: "Plateforme permettant aux clients de commander un service de livraison et aux livreurs de gérer leurs courses. Inclut la géolocalisation en temps réel, la gestion des paiements et un système de suivi de commande.",
+        description: "Application de livraison développée avec Angular et Laravel, mettant en relation clients et livreurs. Interface client pour passer commande avec géolocalisation, estimation des coûts et suivi en temps réel. Application livreur avec gestion des courses, navigation GPS intégrée et historique des livraisons. Backend Laravel gérant l'attribution automatique des courses, calcul des tarifs, paiements en ligne et notifications push pour les mises à jour de statut.",
+        category: ProjectCategory.WEB_APPLICATION,
         link: "",
         screenshots: [
             "/assets/projects/livraison/screenshot1.png"
         ],
-        tags: ["Web Application", "Geolocation", "Real-time Tracking", "Delivery Service", "Mobile First"]
+        tags: ["Angular", "Laravel", "Geolocation", "GPS", "Real-time Tracking", "Delivery Service", "Push Notifications"]
     },
     {
         title: "Plateforme de transfert sécurisé de fichiers interentreprises",
         placeholder: "Application web de transfert de fichiers sensibles avec chiffrement PGP et envoi SFTP",
-        description: "Application web sécurisée permettant le transfert de fichiers sensibles avec chiffrement PGP de bout en bout et envoi automatisé vers un serveur SFTP. Chaque utilisateur dispose d’une clé PGP unique pour garantir la confidentialité et l’intégrité des données. L’interface intuitive permet l’upload, la gestion des clés, le chiffrement côté client et la traçabilité complète des transferts. Architecture basée sur un frontend moderne (Angular/React + OpenPGP.js), un backend Node.js ou Spring Boot, et un stockage sécurisé sur serveur SFTP isolé. Conforme aux exigences RGPD et intégrant des logs détaillés pour l’audit.",
+        description: "Application web sécurisée permettant le transfert de fichiers sensibles avec chiffrement PGP de bout en bout et envoi automatisé vers un serveur SFTP. Chaque utilisateur dispose d'une clé PGP unique pour garantir la confidentialité et l'intégrité des données. L'interface intuitive développée en Angular permet l'upload, la gestion des clés, le chiffrement côté client avec OpenPGP.js et la traçabilité complète des transferts. Backend Node.js avec Express gérant l'authentification, la gestion des clés et l'interfaçage SFTP. Conforme aux exigences RGPD avec logs détaillés pour l'audit et surveillance des transferts.",
+        category: ProjectCategory.WEB_APPLICATION,
         link: "",
         screenshots: [
             "/assets/projects/filetransfer/screenshot1.png"
         ],
-        tags: ["Security", "PGP Encryption", "SFTP", "File Transfer", "Enterprise", "Angular", "Node.js"]
+        tags: ["Angular", "Node.js", "Express", "OpenPGP.js", "SFTP", "Security", "RGPD", "Enterprise"]
     },
     {
         title: "Application d’authentification et de validation de signatures électroniques",
         placeholder: "Vérification automatisée des signatures électroniques sur documents uploadés",
         description: "Application web développée avec Angular et Quarkus pour le compte de Cryptoneo, autorité de certification. Elle permet aux utilisateurs de vérifier si une signature électronique est valide sur les documents qu'ils uploadent. Le projet inclut un mécanisme temps réel basé sur SSE (Server-Sent Events) pour informer l’utilisateur de l’avancement de l’analyse. L’application assure sécurité, traçabilité et conformité aux standards de signatures électroniques.",
+        category: ProjectCategory.WEB_APPLICATION,
         link: "",
         screenshots: [
             "/assets/projects/signature-validation/screenshot1.png"
