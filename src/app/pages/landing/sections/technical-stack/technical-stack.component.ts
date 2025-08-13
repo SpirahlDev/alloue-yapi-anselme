@@ -45,9 +45,6 @@ export class TechnicalStackComponent {
     }
   
   
-    getTechCatIcon(cat:string){
-      return cat ?`/icons/tech-categories/${cat}.svg` :'';
-    }
   
     getCustomStyle(techno:Technology){
       switch (techno.name) {
