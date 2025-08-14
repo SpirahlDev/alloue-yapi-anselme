@@ -1,7 +1,7 @@
 import { Project } from "../model/project";
 import { Technology } from "../model/technology";
 
-export interface IMe{
+export interface IPerson{
     localisation:string;
     projects : Project[];
     skills:string[];
