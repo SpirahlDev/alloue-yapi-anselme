@@ -4,12 +4,12 @@
    
     <div class="flex justify-center" id="download-cv">
         <button 
-            class="bg-[#FFB61D] hover:bg-[#e6a319] text-[#1b1b1b] hover:text-white font-medium py-3 px-8 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg transform hover:scale-105"
+            class="group bg-[#FFB61D] hover:bg-[#e6a319] text-[#1b1b1b] hover:text-white font-medium py-3 px-8 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg transform hover:scale-105"
             (click)="downloadCV()"
             [ariaLabel]="'Télécharger mon CV complet'">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 16L7 11L8.4 9.6L11 12.2V4H13V12.2L15.6 9.6L17 11L12 16Z" fill="currentColor"/>
-                <path d="M5 20V18H19V20H5Z" fill="currentColor"/>
+            <svg width="20" class="fill-black duration-200 group-hover:fill-white" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16L7 11L8.4 9.6L11 12.2V4H13V12.2L15.6 9.6L17 11L12 16Z" />
+                <path d="M5 20V18H19V20H5Z" />
             </svg>
             Voir mon CV complet
         </button>

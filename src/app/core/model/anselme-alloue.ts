@@ -9,6 +9,7 @@ export class AnselmeAlloue extends Me {
         super();
         this.localisation = "Abidjan, Côte d'Ivoire";
         this.birthDate = new Date('2004-05-07');
+        this.phone = "+225 01 02 80 49 64";
         
         // Initialisation des données après que les propriétés privées soient définies
         this.loadSkills();

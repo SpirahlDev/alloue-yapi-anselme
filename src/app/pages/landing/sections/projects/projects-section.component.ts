@@ -6,12 +6,13 @@ import { Project } from '../../../../core/model/project';
 import { ProjectCategory } from '../../../../core/interfaces/IProject';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { TabsModule } from 'primeng/tabs';
+import { ProjectCardComponent } from '../../../../shared/components/project-card/project-card.component';
 
 @Component({
   selector: 'app-realisation-section',
-  imports: [CommonModule, SectionTitleComponent, TabsModule],
-  templateUrl: './third-section.component.html',
-  styleUrl: './third-section.component.css',
+  imports: [CommonModule, SectionTitleComponent, TabsModule, ProjectCardComponent],
+  templateUrl: './projects-section.component.html',
+  styleUrl: './projects-section.component.css',
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [

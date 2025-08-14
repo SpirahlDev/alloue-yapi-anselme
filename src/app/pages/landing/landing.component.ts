@@ -7,7 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { PopoverModule } from 'primeng/popover';
 import { RippleModule } from 'primeng/ripple';
-import { RealisationSectionComponent } from "./sections/projects/third-section.component";
+import { RealisationSectionComponent } from "./sections/projects/projects-section.component";
 import { ContactSectionComponent } from "./sections/contacts/contact-section.component";
 import { FooterComponent } from "../../shared/components/footer/footer.component";
 import { PersonalDataService } from "../../core/services/personal-data.service";

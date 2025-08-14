@@ -8,6 +8,7 @@ export abstract class Me implements IMe{
     technologies : Technology[]=[];
     skills:string[]=[];
     birthDate: Date = new Date();
+    phone?:string;
 
     constructor(){
         // Les méthodes d'initialisation sont appelées par les classes enfants

@@ -3,14 +3,13 @@ import { AnselmeAlloue } from '../../../../core/model/anselme-alloue';
 import { CommonModule } from '@angular/common';
 import { PanelModule } from 'primeng/panel';
 import { TabsModule } from 'primeng/tabs';
-import { ProjectSliderComponent } from '../../../../shared/components/project-slider/project-slider.component';
 import { TechnologyCardComponent } from '../../../../shared/components/technology-card/technology-card.component';
 import { Technology } from '../../../../core/model/technology';
 import { SectionTitleComponent } from "../../../../shared/ui-kit/section-title/section-title.component";
 
 @Component({
   selector: 'app-technical-stack',
-  imports: [ProjectSliderComponent, TabsModule, TechnologyCardComponent, CommonModule, PanelModule, SectionTitleComponent],
+  imports: [ TabsModule, TechnologyCardComponent, CommonModule, PanelModule, SectionTitleComponent],
   templateUrl: './technical-stack.component.html',
   styleUrl: './technical-stack.component.css'
 })

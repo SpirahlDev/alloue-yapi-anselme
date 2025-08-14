@@ -7,4 +7,5 @@ export interface IMe{
     skills:string[];
     technologies : Technology[];
     birthDate:Date;
+    phone?:string;
 }

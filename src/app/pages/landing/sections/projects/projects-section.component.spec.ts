@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RealisationSectionComponent } from './third-section.component';
+import { RealisationSectionComponent } from './projects-section.component';
 
 describe('ThirdSectionComponent', () => {
   let component: RealisationSectionComponent;
