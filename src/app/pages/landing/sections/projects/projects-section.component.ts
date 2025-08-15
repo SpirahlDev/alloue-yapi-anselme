@@ -135,4 +135,31 @@ export class RealisationSectionComponent {
     const iconName = categoryIconMap[categoryIndex];
     return iconName ? `/icons/tech-categories/${iconName}.svg` : '';
   }
+
+  getProjectDateRange(project: Project): string | null {
+    if (!project.start_date && !project.end_date) {
+      return null;
+    }
+
+    const formatDate = (date: Date | undefined): string => {
+      if (!date) return '';
+      return new Intl.DateTimeFormat('fr-FR', { 
+        month: 'long', 
+        year: 'numeric' 
+      }).format(new Date(date));
+    };
+
+    const startFormatted = formatDate(project.start_date);
+    const endFormatted = formatDate(project.end_date);
+
+    if (startFormatted && endFormatted) {
+      return `${startFormatted} - ${endFormatted}`;
+    } else if (startFormatted) {
+      return `Depuis ${startFormatted}`;
+    } else if (endFormatted) {
+      return `Jusqu'en ${endFormatted}`;
+    }
+
+    return null;
+  }
 }

@@ -5,6 +5,8 @@ export class Project implements IProject{
     declare placeholder: string;
     declare description: string;
     declare category: ProjectCategory;
+    declare start_date?: Date | undefined;
+    declare end_date?: Date | undefined;
     declare link?: string | undefined;
     declare screenshots?: string[] | undefined;
     declare tags?: string[] | undefined;

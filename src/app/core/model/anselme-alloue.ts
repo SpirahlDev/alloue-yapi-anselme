@@ -227,10 +227,12 @@ export class AnselmeAlloue extends Person {
         "Application web facilitant la mise en relation entre chercheurs d'emploi et employeurs",
       description:
         `MonBarra est une plateforme complète de recrutement qui permet aux chercheurs d'emploi de créer des profils détaillés
-        et aux employeurs de publier des offres d'emploi. L'application inclut un système de matching intelligent basé sur
+        et aux employeurs de publier des offres d'emploi. L'application inclut un système de recherche intelligent basé sur
         les compétences, l'expérience et les préférences géographiques. Elle propose également la gestion des candidatures,
         un système de messagerie intégré et des tableaux de bord analytics pour les recruteurs.`,
       category: ProjectCategory.WEB_APPLICATION,
+      start_date: new Date('2023-09-01'),
+      end_date: new Date('2024-01-15'),
       link: 'https://github.com/anselme-alloue/monbarra',
       screenshots: [
         '/assets/projects/monbarra/screenshot1.png',
@@ -247,40 +249,40 @@ export class AnselmeAlloue extends Person {
       ],
     },
     {
-      title: 'API REST E-commerce',
+      title: 'Lalexandra',
       placeholder:
-        'API backend robuste pour plateforme e-commerce avec gestion complète des produits et commandes',
+        'Une lateforme e-commerce de cosmétique avec gestion complète des produits et commandes',
       description:
-        `API REST développée avec Java et Quarkus pour une plateforme e-commerce. Elle gère l'authentification JWT,
-        la gestion des utilisateurs, le catalogue produits, le panier d'achat, et le processus de commande complet.
-        L'API inclut également un système de paiement intégré, la gestion des stocks en temps réel, et des endpoints
-        d'administration pour la gestion des commandes et des statistiques de vente.`,
-      category: ProjectCategory.API_BACKEND,
+        ``,
+      category: ProjectCategory.ECOMMERCE,
+      start_date: new Date('2024-02-01'),
+      end_date: new Date('2024-06-30'),
       link: 'https://github.com/anselme-alloue/ecommerce-api',
       screenshots: [
         '/assets/projects/ecommerce-api/api-docs.png',
         '/assets/projects/ecommerce-api/architecture.png',
       ],
       tags: [
-        'Java',
-        'Quarkus',
-        'PostgreSQL',
+        'Java Servlet',
+        'Tomcat Server',
+        'JSP',
+        'MySQL',
         'API Backend',
         'JWT',
-        'E-commerce',
-        'Microservices',
       ],
     },
     {
-      title: 'LifeMag',
-      placeholder: 'Plateforme de distribution de magazines et d’actualités',
+      title: 'Lifemag',
+      placeholder: 'Plateforme de distribution de magazines et d\'actualités',
       description:
-        `Application web Laravel + Angular permettant aux éditeurs de publier des magazines et aux lecteurs
-        de les consulter en ligne. Gestion des comptes utilisateurs avec rôles et permissions, sécurisation
+        `Application web permettant aux éditeurs de Meduim X - Voodoo Group de publier des magazines, et aux lecteurs
+        de les consulter en ligne. La plateforme inclut une gestion des comptes utilisateurs avec rôles et permissions, sécurisation
         des fichiers PDF et images de couverture, et back-office complet pour l'administration des publications.`,
       category: ProjectCategory.WEB_APPLICATION,
-      link: '',
-      screenshots: ['/assets/projects/lifemag/screenshot1.png'],
+      start_date: new Date('2023-06-01'),
+      end_date: new Date('2023-08-31'),
+      link: 'https://lifemag.ci',
+      screenshots: ['/assets/projects/lifemag/lifemag-screen-1.png','/assets/projects/lifemag/lifemag-screen-2.png'],
       tags: [
         'Laravel',
         'Angular',
@@ -291,27 +293,25 @@ export class AnselmeAlloue extends Person {
       ],
     },
     {
-      title: 'PremierScore',
-      placeholder: 'Application de gestion de tournois sportifs et e-sport',
+      title: '1erscore',
+      placeholder: 'Bientôt',
       description:
-        `Plateforme web Quarkus + Angular permettant de créer et gérer des tournois, équipes, joueurs et matchs,
-        avec un système de classement automatisé. L'application inclut des rôles distincts pour organisateurs,
-        arbitres, spectateurs et participants, et un module d'API temps réel pour les scores.`,
-      category: ProjectCategory.MANAGEMENT_SYSTEM,
+        `Un de mes plus gros projets personnel. J'espère pouvoir en parler plus en largeur dans quelques temps.`,
+      category: ProjectCategory.API_BACKEND,
+      start_date: new Date('2024-07-01'),
       link: '',
-      screenshots: ['/assets/projects/premierscore/screenshot1.png'],
+      screenshots: ['/assets/projects/1erscore/1erscore.png'],
       tags: [
         'Quarkus',
         'Angular',
         'PostgreSQL',
-        'Système de gestion',
+        'Node.Js',
         'Real-time',
-        'Sports',
-        'Tournament Management',
+        'Microservice',
       ],
     },
     {
-      title: 'Plateforme de vente aux enchères',
+      title: 'KelenFila - Plateforme de vente aux enchères',
       placeholder: 'Système complet d’enchères en ligne',
       description:
         `Plateforme d'enchères en ligne développée avec Angular et Laravel, permettant aux utilisateurs de créer
@@ -320,16 +320,19 @@ export class AnselmeAlloue extends Person {
         de paiement intégré. Interface responsive avec notifications push pour les enchères en cours et historique
         détaillé des transactions.`,
       category: ProjectCategory.ECOMMERCE,
+      start_date: new Date('2023-03-01'),
+      end_date: new Date('2023-05-31'),
       link: '',
       screenshots: ['/assets/projects/auction/screenshot1.png'],
       tags: [
-        'Angular',
-        'Laravel',
+        'HTML/CSS',
+        'PHP',
         'WebSockets',
         'Real-time',
         'Payment System',
         'Auction',
         'E-commerce',
+        'Javascript'
       ],
     },
     {
@@ -337,17 +340,19 @@ export class AnselmeAlloue extends Person {
       placeholder:
         'Modélisation et conception d’un système de gestion d’hôtel haut de gamme',
       description:
-        `Système de gestion hôtelière développé avec Laravel pour le REX HOTEL, établissement 4 étoiles à Yamoussoukro
-        (82 chambres, 1 penthouse, restaurants, spa, salles de conférence). Plateforme de réservation en ligne avec
+        `Système de gestion hôtelière développé avec Laravel pour le REX HOTEL, établissement 4 étoiles à Yamoussoukro. Plateforme de réservation en ligne avec
         calendrier de disponibilités, tarification dynamique et paiement sécurisé. Interface de gestion pour le personnel :
         check-in/check-out, facturation automatique, gestion des services (restauration, spa, parking) et tableau de bord
         avec statistiques d'occupation et revenus.`,
-      category: ProjectCategory.MANAGEMENT_SYSTEM,
+      category: ProjectCategory.WEB_APPLICATION,
+      start_date: new Date('2022-10-01'),
+      end_date: new Date('2023-02-28'),
       link: '',
       screenshots: ['/assets/projects/rexhotel/screenshot1.png'],
       tags: [
         'Laravel',
         'MySQL',
+        'Backend API',
         'Système de gestion',
         'Hotel Management',
         'Booking System',
@@ -363,6 +368,8 @@ export class AnselmeAlloue extends Person {
         responsive utilisant Bootstrap, optimisée SEO avec meta-tags dynamiques et sitemap automatique. Espace
         administrateur pour la gestion des contenus, publicités et statistiques de lecture avec tableau de bord analytique.`,
       category: ProjectCategory.WEB_APPLICATION,
+      start_date: new Date('2022-06-01'),
+      end_date: new Date('2022-09-30'),
       link: '',
       screenshots: ['/assets/projects/abidjanactu/screenshot1.png'],
       tags: [
@@ -386,6 +393,8 @@ export class AnselmeAlloue extends Person {
         Backend Laravel gérant l'attribution automatique des courses, calcul des tarifs, paiements en ligne
         et notifications push pour les mises à jour de statut.`,
       category: ProjectCategory.WEB_APPLICATION,
+      start_date: new Date('2023-01-15'),
+      end_date: new Date('2023-04-30'),
       link: '',
       screenshots: ['/assets/projects/livraison/screenshot1.png'],
       tags: [
@@ -410,6 +419,8 @@ export class AnselmeAlloue extends Person {
         Backend Node.js avec Express gérant l'authentification, la gestion des clés et l'interfaçage SFTP.
         Conforme aux exigences RGPD avec logs détaillés pour l'audit et surveillance des transferts.`,
       category: ProjectCategory.WEB_APPLICATION,
+      start_date: new Date('2022-01-01'),
+      end_date: new Date('2022-05-31'),
       link: '',
       screenshots: ['/assets/projects/filetransfer/screenshot1.png'],
       tags: [
@@ -435,6 +446,8 @@ export class AnselmeAlloue extends Person {
         de l'avancement de l'analyse. L'application assure sécurité, traçabilité et conformité aux standards
         de signatures électroniques.`,
       category: ProjectCategory.WEB_APPLICATION,
+      start_date: new Date('2021-09-01'),
+      end_date: new Date('2021-12-31'),
       link: '',
       screenshots: ['/assets/projects/signature-validation/screenshot1.png'],
       tags: [

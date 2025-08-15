@@ -19,4 +19,11 @@ export class ProjectCardComponent {
   onProjectClick(): void {
     this.projectClick.emit(this.project);
   }
+
+  formatDate(date: Date): string {
+    return new Intl.DateTimeFormat('fr-FR', {
+      month: 'short',
+      year: 'numeric'
+    }).format(date);
+  }
 }
