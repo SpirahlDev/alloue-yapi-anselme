@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AnselmeAlloue } from '../model/anselme-alloue';
+import { AppConfig } from '../../app.config';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { AnselmeAlloue } from '../model/anselme-alloue';
 export class PersonalDataService {
   private _me: AnselmeAlloue;
 
-  constructor() { 
+  constructor(private appConf:AppConfig) { 
     this._me = new AnselmeAlloue();
   }
 
@@ -38,4 +39,6 @@ export class PersonalDataService {
   get socialLinks(){
     return this._me.socialLinks;
   }
+
+  
 }

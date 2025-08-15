@@ -15,6 +15,7 @@ import { TagPillComponent } from "../../shared/ui-kit/tag-pill/tag-pill.componen
 import { TechnicalStackComponent } from "./sections/technical-stack/technical-stack.component";
 import { SectionTitleComponent } from "../../shared/ui-kit/section-title/section-title.component";
 import { AnselmeAlloue } from "../../core/model/anselme-alloue";
+import { BaseService } from "../../core/services/base.service";
 
 
 @Component({
@@ -35,7 +36,7 @@ export class LandingComponent {
 
   owner:AnselmeAlloue;
 
-  constructor(public personalDataService: PersonalDataService) {
+  constructor(public personalDataService: PersonalDataService,public baseService:BaseService) {
     this.owner=this.personalDataService.me;
   }
 
@@ -70,7 +71,9 @@ export class LandingComponent {
     return this.personalDataService.age;
   }
 
- 
+ getUri(url:string){
+  return this.baseService.getLink(url);
+ }
 
 
 }

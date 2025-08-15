@@ -158,7 +158,7 @@
                                 @for (screenshot of selectedProjectForModal.screenshots; track screenshot) {
                                     <div class="relative group">
                                         <img 
-                                            [src]="screenshot" 
+                                            [src]="getUri(screenshot)" 
                                             [alt]="'Capture d\'écran de ' + selectedProjectForModal.title"
                                             class="w-full rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-lg"></div>

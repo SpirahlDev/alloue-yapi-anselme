@@ -7,6 +7,7 @@ import { ProjectCategory } from '../../../../core/interfaces/IProject';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { TabsModule } from 'primeng/tabs';
 import { ProjectCardComponent } from '../../../../shared/components/project-card/project-card.component';
+import { BaseService } from '../../../../core/services/base.service';
 
 @Component({
   selector: 'app-realisation-section',
@@ -46,6 +47,7 @@ export class RealisationSectionComponent {
     ...Object.values(ProjectCategory)
   ];
 
+  constructor(private baseService:BaseService){}
   ngOnInit() {
     // Pas besoin d'initialisation particulière
   }
@@ -161,5 +163,9 @@ export class RealisationSectionComponent {
     }
 
     return null;
+  }
+
+  getUri(url:string){
+    return this.baseService.getLink(url);
   }
 }

@@ -7,7 +7,7 @@
     <div class="relative h-32 sm:h-40 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
         @if (project.screenshots && project.screenshots[0]) {
             <img 
-                [src]="project.screenshots[0]" 
+                [src]="getUri(project.screenshots[0])" 
                 [alt]="project.title"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy">
