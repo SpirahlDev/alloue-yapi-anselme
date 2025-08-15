@@ -13,7 +13,7 @@ export class ContactSectionComponent {
 
   downloadCV(): void {
     // Vous pouvez mettre le lien vers votre CV ici
-    const cvUrl = '/assets/cv/CV-ALLOUE_YAPI-DEVELOPPEUR-05_08_25.pdf';
+    const cvUrl = 'https://spirahldev.github.io/alloue-yapi-anselme/assets/cv/CV-ALLOUE_YAPI-DEVELOPPEUR-05_08_25.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
     link.download = 'CV-Anselme-Alloue-Developer.pdf';

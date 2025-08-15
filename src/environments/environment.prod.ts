@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    domain: 'https://github.com/SpirahlDev/alloue-yapi-anselme'
+    domain: 'https://spirahldev.github.io/alloue-yapi-anselme'
 };
