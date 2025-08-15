@@ -56,10 +56,24 @@ html{
     padding-right: 1rem /* 16px */;
 }
 
+@media (min-width: 640px) {
+    .normal-section {
+        padding-left: 1.5rem /* 24px */;
+        padding-right: 1.5rem /* 24px */;
+    }
+}
+
 @media (min-width: 768px) {
     .normal-section {
         padding-left: 2rem /* 32px */;
         padding-right: 2rem /* 32px */;
+    }
+}
+
+@media (min-width: 1024px) {
+    .normal-section {
+        padding-left: 2.5rem /* 40px */;
+        padding-right: 2.5rem /* 40px */;
     }
 }
 

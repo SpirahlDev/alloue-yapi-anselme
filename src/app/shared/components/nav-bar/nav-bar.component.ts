@@ -28,6 +28,16 @@ export class NavBarComponent {
     },
   ];
 
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
   getAnchorName(nav:INavLink){
     return nav.customAnchor ?? `${generateSlug(nav.title)}`;
   }

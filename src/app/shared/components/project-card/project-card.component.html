@@ -4,7 +4,7 @@
     [style.animation-delay]="animationDelay + 'ms'">
     
     <!-- Image du projet -->
-    <div class="relative h-40 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="relative h-32 sm:h-40 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
         @if (project.screenshots && project.screenshots[0]) {
             <img 
                 [src]="project.screenshots[0]" 
@@ -35,16 +35,16 @@
     </div>
 
     <!-- Description du projet -->
-    <div class="px-5 pt-5 flex-grow">
+    <div class="px-3 sm:px-5 pt-3 sm:pt-5 flex-grow">
         <div class="flex items-start justify-between mb-2">
-            <h4 class="text-base font-semibold text-gray-900 group-hover:text-[var(--selection-color)] transition-colors">
+            <h4 class="text-sm sm:text-base font-semibold text-gray-900 group-hover:text-[var(--selection-color)] transition-colors">
                 {{project.title}}
             </h4>
-            @if (project.link) {
+            <!-- @if (project.link) {
                 <div class="flex-shrink-0 ml-2">
                     <div class="w-2 h-2 bg-green-500 rounded-full" title="Projet disponible en ligne"></div>
                 </div>
-            }
+            } -->
         </div>
         
         <!-- Dates du projet -->
@@ -66,37 +66,38 @@
             </div>
         }
         
-        <p class="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2 m-[0!important]">
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-2 sm:mb-3 line-clamp-2 m-[0!important]">
             {{project.placeholder}}
         </p>
 
     </div>
 
-    <div class="px-5 pb-5">
+    <div class="px-3 sm:px-5 pb-3 sm:pb-5">
         <!-- Technologies -->
-        <div class="flex flex-wrap gap-2 mb-3">
+        <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
             @if (technologies; as techs) {
-                @for (tech of techs.slice(0, 3); track tech) {
-                    <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium">
+                @for (tech of techs.slice(0, 2); track tech) {
+                    <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium">
                         {{tech}}
                     </span>
                 }
-                @if (techs.length > 3) {
-                    <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium">
-                        +{{techs.length - 3}}
+                @if (techs.length > 2) {
+                    <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium">
+                        +{{techs.length - 2}}
                     </span>
                 }
             }
         </div>
 
         <!-- Footer de la carte -->
-        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
-            <span class="text-xs text-gray-500">
+        <div class="flex items-center justify-between pt-2 sm:pt-3 border-t border-gray-100">
+            <span class="text-xs text-gray-500 truncate">
                 {{category}}
             </span>
-            <div class="flex items-center text-[var(--selection-color)] text-sm font-medium">
-                Voir détails
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1">
+            <div class="flex items-center text-[var(--selection-color)] text-xs sm:text-sm font-medium">
+                <span class="hidden sm:inline">Voir détails</span>
+                <span class="sm:hidden">Voir</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1">
                     <polyline points="9,18 15,12 9,6"></polyline>
                 </svg>
             </div>
