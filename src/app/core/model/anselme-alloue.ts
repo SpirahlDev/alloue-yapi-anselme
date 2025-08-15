@@ -7,6 +7,11 @@ import { TECHNICAL_STACKS } from '../database/technical-stack-data';
 export class AnselmeAlloue extends Person {
   protected override technoRawData: ITechnology[] = TECHNICAL_STACKS;
   protected override projectRawData: IProject[] = PROJECTS_DATA;
+ 
+  socialLinks={
+    github:"https://github.com/SpirahlDev",
+    linkedin:"https://www.linkedin.com/in/alloue-yapi-anselme"
+  };
 
   constructor() {
     super();
@@ -28,4 +33,6 @@ export class AnselmeAlloue extends Person {
       'Intégration et Déploiement continue (CI/CD)',
     ];
   }
+
+
 }

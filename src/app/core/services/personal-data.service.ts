@@ -34,4 +34,8 @@ export class PersonalDataService {
   get skills() {
     return this._me.skills;
   }
+
+  get socialLinks(){
+    return this._me.socialLinks;
+  }
 }

@@ -14,6 +14,7 @@ import { PersonalDataService } from "../../core/services/personal-data.service";
 import { TagPillComponent } from "../../shared/ui-kit/tag-pill/tag-pill.component";
 import { TechnicalStackComponent } from "./sections/technical-stack/technical-stack.component";
 import { SectionTitleComponent } from "../../shared/ui-kit/section-title/section-title.component";
+import { AnselmeAlloue } from "../../core/model/anselme-alloue";
 
 
 @Component({
@@ -32,7 +33,11 @@ import { SectionTitleComponent } from "../../shared/ui-kit/section-title/section
 export class LandingComponent {
   isPopoverContentHovered:boolean = false;
 
-  constructor(public personalDataService: PersonalDataService) {}
+  owner:AnselmeAlloue;
+
+  constructor(public personalDataService: PersonalDataService) {
+    this.owner=this.personalDataService.me;
+  }
 
   /**
    * That method is called when the mouse leaves the popover content, on the popover triger

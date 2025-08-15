@@ -11,9 +11,9 @@ import { AnselmeAlloue } from '../../../core/model/anselme-alloue';
 })
 export class FooterComponent {
   currentDate = new Date();
-  me: AnselmeAlloue;
+  owner: AnselmeAlloue;
 
   constructor(private personalDataService: PersonalDataService) {
-    this.me = this.personalDataService.me as AnselmeAlloue;
+    this.owner = this.personalDataService.me as AnselmeAlloue;
   }
 }

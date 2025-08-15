@@ -1,6 +1,6 @@
 export enum ProjectCategory {
     WEB_APPLICATION = "Web Application",
-    API_BACKEND = "API Backend", 
+    // API_BACKEND = "API Backend", 
     MOBILE_APP = "Mobile App",
     ECOMMERCE = "E-commerce",
 }
