@@ -33,4 +33,9 @@ export class ProjectCardComponent {
   getUri(url:string){
     return this.baseService.getLink(url);
   }
+
+  isStackDetailsAllowed(): boolean {
+    // Vérifier si les tags techniques contiennent des éléments spécifiques
+    return !this.technologies.includes('⛔');
+  }
 }

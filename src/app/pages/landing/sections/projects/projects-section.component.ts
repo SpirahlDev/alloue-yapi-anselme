@@ -168,4 +168,9 @@ export class RealisationSectionComponent {
   getUri(url:string){
     return this.baseService.getLink(url);
   }
+
+  isStackDetailsAllowed(techTags: string[]): boolean {
+    // Vérifier si les tags techniques contiennent des éléments spécifiques
+    return !techTags.includes('⛔');
+  }
 }

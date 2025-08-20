@@ -74,7 +74,7 @@
 
     <div class="px-3 sm:px-5 pb-3 sm:pb-5">
         <!-- Technologies -->
-        <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
+        <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3" *ngIf="isStackDetailsAllowed()">
             @if (technologies; as techs) {
                 @for (tech of techs.slice(0, 2); track tech) {
                     <span class="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium">

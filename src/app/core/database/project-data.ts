@@ -20,21 +20,16 @@ export const PROJECTS_DATA: IProject[] = [
     tags: ['OpenPGP.js', 'Node.js', 'Express', 'Angular', 'SFTP', 'Web Worker', 'SSH'],
   },
   {
-    title: 'Plateforme d’authentification de signatures électroniques',
+    title: 'Plateforme d\'authentification de signatures électroniques',
     placeholder: 'Vérification automatisée des signatures électroniques sur documents uploadés',
-    description:
-      `Développée pour Cryptoneo, autorité de certification, cette plateforme permet aux utilisateurs de vérifier la validité de signatures électroniques présentes dans des documents téléchargés. 
-       Basée sur Angular pour le frontend et Quarkus pour le backend, elle utilise un mécanisme en temps réel (SSE) pour informer l’utilisateur de l’état de l’analyse. 
-       Le projet assure conformité avec les standards de signatures électroniques, tout en garantissant sécurité et traçabilité des opérations.`,
+    description: `Développée pour une autorité de certification, cette plateforme permet aux utilisateurs de vérifier la validité de signatures électroniques présentes dans des documents uploadés.  
+      Le projet assure conformité avec les standards de signatures électroniques, tout en garantissant sécurité et traçabilité des opérations.`,
     category: ProjectCategory.WEB_APPLICATION,
     start_date: new Date('2024-05-01'),
     end_date: new Date('2024-07-01'),
-    link: 'https://digidoc-auth.cryptoneoplatforms.com',
-    screenshots: [
-      '/assets/projects/digidoc/screen-2.png',
-      '/assets/projects/digidoc/screen-1.png'
-    ],
-    tags: ['Angular', 'Quarkus', 'Real-time', 'Cryptographie', 'SSE'],
+    link: '',
+    screenshots: ['/assets/projects/contract/screen-1.png'],    
+    tags: ['⛔'],
   },
   {
     title: 'REX Hotel - Gestion de réservation',
@@ -68,15 +63,14 @@ export const PROJECTS_DATA: IProject[] = [
     title: 'Solution web de gestion de contrats signés électroniquement',
     placeholder: 'Consultation et gestion en ligne de contrats',
     description:
-    `Conçue pour Cryptoneo, cette solution permet aux utilisateurs des plateformes de signature de l'entreprise (B2B & B2C) d’accéder facilement à leurs contrats signés électroniquement. 
-    L’interface, développée en Angular, offre une navigation fluide et sécurisée, tandis que le backend Quarkus assure l’authentification, la récupération et la validation des documents. 
+        `Cette solution permet aux utilisateurs des plateformes de signature de l'entreprise (en B2B & B2C) d’accéder facilement à leurs contrats signés électroniquement. 
     Ce projet a renforcé la transparence et l’accessibilité des informations contractuelles pour des milliers d’abonnés.`,
     category: ProjectCategory.WEB_APPLICATION,
     start_date: new Date('2025-05-01'), // À ajuster selon ton CV
     end_date: new Date('2025-07-01'),
     link: '',
-    screenshots: ['/assets/projects/suivi-contrat/screen-1.png'],
-    tags: ['Angular', 'Quarkus', 'Horodatage'],
+    screenshots: ['/assets/projects/contract/screen-1.png'],    
+    tags: ['⛔'],
   },
   {
     title: 'Lifemag',
@@ -162,7 +156,7 @@ export const PROJECTS_DATA: IProject[] = [
     title: '1erscore',
     placeholder: 'Plateforme en cours de développement',
     description:
-      `Premierscore est un projet personnel sur lequel je travaille activement. 
+      `1erscore est un projet personnel sur lequel je travaille activement. 
       C’est une initiative qui me tient particulièrement à cœur, car elle reflète à la fois ma vision et mon approche technique. 
       Bien qu’encore en cours de développement, ce projet bénéficie d’une architecture soignée et d’un design pensé pour durer, 
       avec pour objectif de proposer une expérience à forte valeur ajoutée dès son lancement.`,

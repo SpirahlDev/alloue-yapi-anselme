@@ -137,15 +137,16 @@
 
                         <!-- Technologies utilisées -->
                         @if (getProjectTechnologies(selectedProjectForModal); as techs) {
-                            <div>
+                            <div >
                                 <h3 class="text-lg font-semibold text-gray-900 mb-3">Technologies utilisées</h3>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="flex flex-wrap gap-2" *ngIf="isStackDetailsAllowed(techs)">
                                     @for (tech of techs; track tech) {
-                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
+                                        <span  class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
                                             {{tech}}
                                         </span>
                                     }
                                 </div>
+                                <p title="Indisponible" *ngIf="!isStackDetailsAllowed(techs)">Indisponible</p>
                             </div>
                         }
                     </div>
