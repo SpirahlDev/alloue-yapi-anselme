@@ -57,7 +57,7 @@ export const TECHNICAL_STACKS: ITechnology[] = [
     {
       name: 'Laravel',
       category: TechnoCategory.BACKEND,
-      icon: { value: '/icons/technologies/laravel.svg', type: 'url' },
+      icon: { value: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg', type: 'url' },
       description: 'Framework PHP élégant pour développement web rapide',
     },
     {
