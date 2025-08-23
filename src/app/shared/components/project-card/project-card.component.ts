@@ -23,11 +23,21 @@ export class ProjectCardComponent {
     this.projectClick.emit(this.project);
   }
 
-  formatDate(date: Date): string {
+  formatDate(date: Date | string | null | undefined): string {
+    if (!date) {
+      return '';
+    }
+    
+    const parsedDate = new Date(date);
+    
+    if (isNaN(parsedDate.getTime())) {
+      return '';
+    }
+    
     return new Intl.DateTimeFormat('fr-FR', {
       month: 'short',
       year: 'numeric'
-    }).format(date);
+    }).format(parsedDate);
   }
 
   getUri(url:string){
