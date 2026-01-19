@@ -6,7 +6,7 @@ export const PROJECTS_DATA: IProject[] = [
     placeholder: 'Transfert de fichiers sensibles avec chiffrement PGP et envoi SFTP',
     description:
       `Cette application web sécurisée permet à des entreprises d’échanger des fichiers sensibles avec chiffrement PGP de bout en bout et transfert automatisé vers un serveur SFTP. 
-       Chaque utilisateur possède sa clé PGP unique, gérée directement dans l’interface Angular, et le chiffrement est réalisé côté client via OpenPGP.js. 
+       Chaque utilisateur possède sa clé PGP unique, et le chiffrement est réalisé côté client via OpenPGP.js. 
        Le backend, en Node.js avec Express, gère l’authentification, l’administration des clés et les transferts SFTP, tout en respectant le RGPD. 
       `,
     category: ProjectCategory.WEB_APPLICATION,
@@ -76,7 +76,7 @@ export const PROJECTS_DATA: IProject[] = [
     title: 'Lifemag',
     placeholder: 'Plateforme de distribution de magazines et d’actualités',
     description: 
-      `Développée pour Meduim X, filiale de Voodoo Group, Lifemag est une plateforme web qui permet aux éditeurs de publier leurs magazines et aux lecteurs de les consulter en ligne. La solution intègre un système complet de gestion des rôles, la sécurisation des PDF et des images de couverture, ainsi qu’un back-office puissant pour gérer l’ensemble des publications. Conçue avec Laravel et Angular, cette réalisation a renforcé mon expertise en gestion de contenus numériques et en sécurisation de documents tout en consolidant mes compétences fullstack.`,
+      `Développée pour Meduim X, filiale de Voodoo Group, Lifemag est une plateforme web qui permet aux éditeurs de publier leurs magazines et aux lecteurs de les consulter en ligne. La solution intègre un système complet de gestion des rôles, la sécurisation des PDF et des images de couverture, ainsi qu’un back-office pour gérer l’ensemble des publications. Cette réalisation a renforcé mon expertise en gestion de contenus numériques et en sécurisation de documents.`,
     category: ProjectCategory.WEB_APPLICATION,
     start_date: new Date('2024-12-01'),
     end_date: new Date('2025-02-01'),
@@ -138,7 +138,7 @@ export const PROJECTS_DATA: IProject[] = [
       '/assets/projects/kelen-fila/screen-1.png',
       '/assets/projects/kelen-fila/screen-2.png'
     ],
-    tags: [ 'PHP', 'WebSockets', 'Javascript','Real-time', 'Payment System'],
+    tags: [ 'PHP', 'WebSockets', 'Javascript', 'Payment System'],
   },
   {
     title: 'Plateforme de prestation de service de livraison',
@@ -150,7 +150,7 @@ export const PROJECTS_DATA: IProject[] = [
     end_date: new Date('2023-07-01'),
     link: '',
     screenshots: ['/assets/projects/lavirgul/screen-2.png'],
-    tags: ['Javascript', 'PHP', 'Geolocation', 'GPS', 'Real-time', 'Push Notifications'],
+    tags: ['Javascript', 'PHP', 'Geolocation', 'GPS', 'Push Notifications'],
   },
   {
     title: '1erscore',
