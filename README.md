@@ -1,59 +1,65 @@
-# AnselmeAlloue
+# Portfolio - Alloue Yapi Anselme
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+Portfolio personnel développé pour présenter mon profil, mes compétences techniques et une sélection de projets web/mobile.
 
-## Development server
+## Qui suis-je ?
 
-To start a local development server, run:
+Je suis **Alloue Yapi Anselme**, développeur **Fullstack** basé a **Abidjan (Cote d'Ivoire)**, passionné par la conception de produits numériques utiles, solides et bien pensés.
 
-```bash
-ng serve
-```
+Je travaille principalement sur :
+- des applications web modernes
+- des APIs et architectures backend robustes
+- des applications mobiles multiplateformes
+- l'intégration et le déploiement continu (CI/CD)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Ce que tu trouveras dans ce repo
 
-## Code scaffolding
+Ce projet est mon portfolio en ligne, construit avec :
+- **Angular 19**
+- **TypeScript**
+- **Tailwind CSS**
+- **PrimeNG**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Il met en avant :
+- mon parcours et mes expertises
+- mon stack technique (Frontend, Backend, Mobile, DevOps, Outils)
+- mes réalisations principales
+- mes liens de contact professionnels
 
-```bash
-ng generate component component-name
-```
+## Competences Techniques
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Frontend
+Angular, TypeScript, JavaScript, Tailwind CSS
 
-```bash
-ng generate --help
-```
+### Backend
+Java, Quarkus, Node.js, Laravel, MySQL, PostgreSQL
 
-## Building
+### Mobile
+Flutter
 
-To build the project run:
+### DevOps
+GitHub Actions, GitLab CI/CD, Docker
 
-```bash
-ng build
-```
+### Outils
+Git, GitHub, Postman, Figma, Android Studio
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Projets mis en avant
 
-## Running unit tests
+- **Plateforme securisee de transfert de fichiers interentreprises**  
+  Chiffrement PGP cote client, transfert SFTP automatise, backend Node.js/Express.
+- **Lifemag**  
+  Plateforme de diffusion de magazines (gestion des roles, securisation de contenus, back-office).
+- **MonBarra**  
+  Plateforme de recrutement avec moteur de recherche, messagerie et analytics (role frontend lead).
+- **AbidjanActu**  
+  Site d'actualites avec CMS, moderation, SEO et tableau de bord.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Contact
 
-```bash
-ng test
-```
+- LinkedIn : [alloue-yapi-anselme](https://www.linkedin.com/in/alloue-yapi-anselme)
+- GitHub : [SpirahlDev](https://github.com/SpirahlDev)
+- Email : [anselmealloue@gmail.com](mailto:anselmealloue@gmail.com)
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Si tu veux collaborer sur un projet web, mobile ou fullstack, je suis disponible pour en discuter.
