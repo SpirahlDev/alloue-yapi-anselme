@@ -1,0 +1,23 @@
+name : Portfolio CI pipeline
+
+on:
+  push: 
+    branches : [main]
+
+jobs: 
+  build: 
+    runs-on : ubuntu-latest
+    env:
+      BASE_URL: alloue-yapi-anselme
+
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name : Dependencies installation
+        run : npm install && npm install -g @angular/cli
+
+      - name : Project Building
+        run : ng build --deploy-url "/${BASE_URL}/" --output-path "dist/${BASE_URL}"
+        run : 
+      
