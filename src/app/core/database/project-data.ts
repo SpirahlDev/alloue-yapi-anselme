@@ -28,7 +28,7 @@ export const PROJECTS_DATA: IProject[] = [
     start_date: new Date('2024-05-01'),
     end_date: new Date('2024-07-01'),
     link: '',
-    screenshots: ['/assets/projects/contract/screen-1.png'],    
+    screenshots: ['/assets/projects/contract/screen-2.png'],    
     tags: ['⛔'],
   },
   {
